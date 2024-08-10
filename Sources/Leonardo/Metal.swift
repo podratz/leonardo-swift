@@ -6,5 +6,17 @@
 //
 
 protocol Metal {
+    
     var ratio: Double { get }
+    
+    var generator: MetalGenerator { get }
+    
+}
+
+extension Metal {
+    
+    var generator: MetalGenerator {
+        MetalGenerator(metal: self)
+    }
+    
 }
