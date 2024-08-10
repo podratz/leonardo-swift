@@ -7,10 +7,12 @@
 
 import Foundation
 
+/// A generator that generates the next metallic number.
 struct MetalGenerator: Sequence, IteratorProtocol {
     let metal: Metal
     var current: Double
 
+    /// Returns the next metallic number in the sequence.
     mutating func next() -> Double? {
         defer {
             current *= metal.ratio
@@ -19,8 +21,9 @@ struct MetalGenerator: Sequence, IteratorProtocol {
         return current
     }
     
-    init(metal: Metal, current: Double = 1) {
+    /// Initializes a new generator with its elements following the specified metallic ratio.
+    init(metal: Metal, base: Double = 1) {
         self.metal = metal
-        self.current = current
+        self.current = base
     }
 }
