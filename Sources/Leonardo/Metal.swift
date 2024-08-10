@@ -15,8 +15,9 @@ protocol Metal {
 
 extension Metal {
     
-    var generator: MetalGenerator {
-        MetalGenerator(metal: self)
+    /// Creates a metallic generator based on a provided starting value.
+    func generator(base: Double = 1) -> MetalGenerator {
+        MetalGenerator(metal: self, base: base)
     }
     
 }
