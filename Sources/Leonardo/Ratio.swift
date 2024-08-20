@@ -7,37 +7,37 @@
 
 import Foundation
 
-struct Ratio {
-    var value: Double
+public struct Ratio {
+    public var value: Double
     
-    init(_ value: Double) {
+    public init(_ value: Double) {
         self.value = value
     }
 }
 
-extension Ratio {
+public extension Ratio {
     /// The angle associated with the ratio.
-    var angle: Double {
+    public var angle: Double {
         .tau * (1 - (1 / value))
     }
 }
 
-extension Ratio {
+public extension Ratio {
     /// The proportion of  a give whole.
-    func proportion(of whole: Double) -> Double {
+    public func proportion(of whole: Double) -> Double {
         (1 / value) * whole
     }
 }
 
-extension Ratio {
-    static let platinum =  Ratio((0 + sqrt( 4)) / 2)
-    static let gold =      Ratio((1 + sqrt( 5)) / 2)
-    static let silver =    Ratio((2 + sqrt( 8)) / 2)
-    static let bronce =    Ratio((3 + sqrt(13)) / 2)
-    static let copper =    Ratio((4 + sqrt(20)) / 2)
-    static let nickel =    Ratio((5 + sqrt(29)) / 2)
-    static let aluminium = Ratio((6 + sqrt(40)) / 2)
-    static let iron =      Ratio((7 + sqrt(53)) / 2)
-    static let tin =       Ratio((8 + sqrt(68)) / 2)
-    static let lead =      Ratio((9 + sqrt(85)) / 2)
+public extension Ratio {
+    public static let platinum =  Ratio((0 + sqrt( 4)) / 2)
+    public static let gold =      Ratio((1 + sqrt( 5)) / 2)
+    public static let silver =    Ratio((2 + sqrt( 8)) / 2)
+    public static let bronce =    Ratio((3 + sqrt(13)) / 2)
+    public static let copper =    Ratio((4 + sqrt(20)) / 2)
+    public static let nickel =    Ratio((5 + sqrt(29)) / 2)
+    public static let aluminium = Ratio((6 + sqrt(40)) / 2)
+    public static let iron =      Ratio((7 + sqrt(53)) / 2)
+    public static let tin =       Ratio((8 + sqrt(68)) / 2)
+    public static let lead =      Ratio((9 + sqrt(85)) / 2)
 }
