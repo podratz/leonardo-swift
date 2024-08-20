@@ -16,6 +16,13 @@ struct Ratio {
 }
 
 extension Ratio {
+    /// The proportion of  a give whole.
+    func proportion(of whole: Double) -> Double {
+        (1 / value) * whole
+    }
+}
+
+extension Ratio {
     static let platinum =  Ratio((0 + sqrt( 4)) / 2)
     static let gold =      Ratio((1 + sqrt( 5)) / 2)
     static let silver =    Ratio((2 + sqrt( 8)) / 2)
