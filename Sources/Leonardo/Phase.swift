@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import ComplexModule
 
 struct Phase {
     let radians: Double
@@ -22,5 +23,11 @@ extension Phase {
 
     init(degrees: Double) {
         self.radians = degrees * (.tau / 360)
+    }
+}
+
+extension Phase {
+    var complex: Complex<Double> {
+        Complex(length: 1, phase: radians)
     }
 }
