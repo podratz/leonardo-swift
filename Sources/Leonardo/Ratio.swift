@@ -16,6 +16,13 @@ struct Ratio {
 }
 
 extension Ratio {
+    /// The angle associated with the ratio.
+    var angle: Double {
+        .tau * (1 - (1 / value))
+    }
+}
+
+extension Ratio {
     /// The proportion of  a give whole.
     func proportion(of whole: Double) -> Double {
         (1 / value) * whole
