@@ -43,6 +43,14 @@ public extension Ratio where ValueType: FloatingPoint {
 }
 
 public extension Ratio where ValueType: FloatingPoint {
+    func mean(_ first: ValueType, _ second: ValueType) -> ValueType {
+        let diff = second - first
+        let delta = diff / value
+        return first + delta
+    }
+}
+
+public extension Ratio where ValueType: FloatingPoint {
     static var platinum:  Self { .init((0 + sqrt( 4)) / 2) }
     static var gold:      Self { .init((1 + sqrt( 5)) / 2) }
     static var silver:    Self { .init((2 + sqrt( 8)) / 2) }
