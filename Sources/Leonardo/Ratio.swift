@@ -53,4 +53,14 @@ public extension Ratio where ValueType: FloatingPoint {
     static var iron:      Self { .init((7 + sqrt(53)) / 2) }
     static var tin:       Self { .init((8 + sqrt(68)) / 2) }
     static var lead:      Self { .init((9 + sqrt(85)) / 2) }
+    
+    static var plastic:   Self {
+        var x: ValueType = 1.0
+        for _ in 0..<1000 {
+            let f = x * x * x - x - 1
+            x -= f / (3 * x * x - 1)
+            if abs(f) < 1e-12 { break }
+        }
+        return .init(x)
+    }
 }
