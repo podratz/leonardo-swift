@@ -6,38 +6,51 @@
 //
 
 import Foundation
+import Numerics
 
-public struct Ratio {
-    public var value: Double
+public struct Ratio<ValueType: Comparable & ExpressibleByFloatLiteral & ExpressibleByIntegerLiteral>: Comparable, ExpressibleByFloatLiteral, ExpressibleByIntegerLiteral {
+    public var value: ValueType
     
-    public init(_ value: Double) {
+    public init(_ value: ValueType) {
         self.value = value
+    }
+    
+    public static func < (lhs: Ratio<ValueType>, rhs: Ratio<ValueType>) -> Bool {
+        lhs.value < rhs.value
+    }
+    
+    public init(floatLiteral value: ValueType.FloatLiteralType) {
+        self.value = ValueType(floatLiteral: value)
+    }
+    
+    public init(integerLiteral value: ValueType.IntegerLiteralType) {
+        self.value = ValueType(integerLiteral: value)
     }
 }
 
-public extension Ratio {
+public extension Ratio where ValueType: FloatingPoint {
     /// The angle associated with the ratio.
-    var angle: Double {
+    var angle: ValueType {
         .tau * (1 - (1 / value))
     }
 }
 
-public extension Ratio {
-    /// The proportion of  a give whole.
-    func proportion(of whole: Double) -> Double {
-        (1 / value) * whole
+public extension Ratio where ValueType: FloatingPoint {
+    /// The ratio's proportion of some value.
+    func proportion(of otherValue: ValueType) -> ValueType {
+        otherValue / value
     }
 }
 
-public extension Ratio {
-    static let platinum =  Ratio((0 + sqrt( 4)) / 2)
-    static let gold =      Ratio((1 + sqrt( 5)) / 2)
-    static let silver =    Ratio((2 + sqrt( 8)) / 2)
-    static let bronce =    Ratio((3 + sqrt(13)) / 2)
-    static let copper =    Ratio((4 + sqrt(20)) / 2)
-    static let nickel =    Ratio((5 + sqrt(29)) / 2)
-    static let aluminium = Ratio((6 + sqrt(40)) / 2)
-    static let iron =      Ratio((7 + sqrt(53)) / 2)
-    static let tin =       Ratio((8 + sqrt(68)) / 2)
-    static let lead =      Ratio((9 + sqrt(85)) / 2)
+public extension Ratio where ValueType: FloatingPoint {
+    static var platinum:  Self { .init((0 + sqrt( 4)) / 2) }
+    static var gold:      Self { .init((1 + sqrt( 5)) / 2) }
+    static var silver:    Self { .init((2 + sqrt( 8)) / 2) }
+    static var bronce:    Self { .init((3 + sqrt(13)) / 2) }
+    static var copper:    Self { .init((4 + sqrt(20)) / 2) }
+    static var nickel:    Self { .init((5 + sqrt(29)) / 2) }
+    static var aluminium: Self { .init((6 + sqrt(40)) / 2) }
+    static var iron:      Self { .init((7 + sqrt(53)) / 2) }
+    static var tin:       Self { .init((8 + sqrt(68)) / 2) }
+    static var lead:      Self { .init((9 + sqrt(85)) / 2) }
 }
