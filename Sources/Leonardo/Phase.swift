@@ -17,17 +17,17 @@ public struct Phase {
 }
 
 public extension Phase {
-    public var degrees: Double {
+    var degrees: Double {
         radians * (360 / .tau)
     }
 
-    public init(degrees: Double) {
+    init(degrees: Double) {
         self.radians = degrees * (.tau / 360)
     }
 }
 
 public extension Phase {
-    public var complex: Complex<Double> {
+    var complex: Complex<Double> {
         Complex(length: 1, phase: radians)
     }
 }
