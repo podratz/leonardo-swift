@@ -53,9 +53,18 @@ public extension Ratio where ValueType: FloatingPoint {
 
 extension Ratio where ValueType: Real {
     
+    /// The sequence of angles derived from iterative application of this ratio.
+    var angles: AnySequence<ValueType> {
+        AnySequence(
+            (1...)
+               .lazy
+               .map { applied(to: angle, n: $0) }
+        )
+    }
+
     /// The number which results from applying the ratio to another number.
     func applied(to number: ValueType, n times: Int = 1) -> ValueType {
         ValueType.pow(value, times) * number
     }
-    
+        
 }
