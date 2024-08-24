@@ -53,6 +53,15 @@ public extension Ratio where ValueType: FloatingPoint {
 
 extension Ratio where ValueType: Real {
     
+    /// A sequence of values created by iteratively applying this ratio.
+    var values: AnySequence<ValueType> {
+        AnySequence(
+            (1...)
+               .lazy
+               .map { applied(to: 1, n: $0) }
+        )
+    }
+    
     /// The sequence of angles derived from iterative application of this ratio.
     var angles: AnySequence<ValueType> {
         AnySequence(
