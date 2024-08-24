@@ -33,19 +33,21 @@ public extension Ratio where ValueType: FloatingPoint {
     var angle: ValueType {
         .tau * (1 - (1 / value))
     }
-}
-
-public extension Ratio where ValueType: FloatingPoint {
+    
     /// The ratio's proportion of some value.
     func proportion(of otherValue: ValueType) -> ValueType {
         otherValue / value
     }
-}
+    
+    /// The number which results from applying the ratio to another number.
+    func applied(to number: ValueType) -> ValueType {
+        value * number
+    }
 
-public extension Ratio where ValueType: FloatingPoint {
     func mean(_ first: ValueType, _ second: ValueType) -> ValueType {
         let diff = second - first
         let delta = diff / value
         return first + delta
     }
+
 }
