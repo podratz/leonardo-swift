@@ -9,7 +9,7 @@ import Numerics
 
 public struct Ratio<ValueType: Comparable & ExpressibleByFloatLiteral & ExpressibleByIntegerLiteral>: Comparable, ExpressibleByFloatLiteral, ExpressibleByIntegerLiteral {
     
-    public var value: ValueType
+    public let value: ValueType
     
     public init(_ value: ValueType) {
         self.value = value
