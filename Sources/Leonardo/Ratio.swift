@@ -5,7 +5,6 @@
 //  Created by Nick on 20.08.24.
 //
 
-import Foundation
 import Numerics
 
 public struct Ratio<ValueType: Comparable>: Comparable {
