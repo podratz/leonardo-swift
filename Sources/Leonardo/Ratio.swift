@@ -8,7 +8,7 @@
 import Foundation
 import Numerics
 
-public struct Ratio<ValueType: Comparable & ExpressibleByFloatLiteral & ExpressibleByIntegerLiteral>: Comparable, ExpressibleByFloatLiteral, ExpressibleByIntegerLiteral {
+public struct Ratio<ValueType: Comparable>: Comparable {
     
     public let value: ValueType
     
@@ -20,14 +20,22 @@ public struct Ratio<ValueType: Comparable & ExpressibleByFloatLiteral & Expressi
         lhs.value < rhs.value
     }
     
+}
+
+extension Ratio: ExpressibleByFloatLiteral where ValueType: ExpressibleByFloatLiteral {
+    
     public init(floatLiteral value: ValueType.FloatLiteralType) {
         self.value = ValueType(floatLiteral: value)
     }
     
+}
+
+extension Ratio: ExpressibleByIntegerLiteral where ValueType: ExpressibleByIntegerLiteral {
+    
     public init(integerLiteral value: ValueType.IntegerLiteralType) {
         self.value = ValueType(integerLiteral: value)
     }
-    
+
 }
 
 public extension Ratio where ValueType: FloatingPoint {
