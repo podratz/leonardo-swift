@@ -5,6 +5,7 @@
 //  Created by Nick on 20.08.24.
 //
 
+import Foundation
 import Numerics
 
 public struct Ratio<ValueType: Comparable & ExpressibleByFloatLiteral & ExpressibleByIntegerLiteral>: Comparable, ExpressibleByFloatLiteral, ExpressibleByIntegerLiteral {
@@ -41,16 +42,20 @@ public extension Ratio where ValueType: FloatingPoint {
         otherValue / value
     }
     
-    /// The number which results from applying the ratio to another number.
-    func applied(to number: ValueType) -> ValueType {
-        value * number
-    }
-
     /// The weighted mean value between the first and second number provided.
     func mean(_ first: ValueType, _ second: ValueType) -> ValueType {
         let diff = second - first
         let delta = diff / value
         return first + delta
+    }
+    
+}
+
+extension Ratio where ValueType: Real {
+    
+    /// The number which results from applying the ratio to another number.
+    func applied(to number: ValueType, n times: Int = 1) -> ValueType {
+        ValueType.pow(value, times) * number
     }
     
 }
