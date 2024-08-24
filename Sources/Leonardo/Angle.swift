@@ -8,6 +8,7 @@
 import Numerics
 
 public struct Angle<Radians: Real & ExpressibleByFloatLiteral & ExpressibleByIntegerLiteral>: ExpressibleByFloatLiteral, ExpressibleByIntegerLiteral {
+    
     public let radians: Radians
     
     public init(_ radians: Radians) {
@@ -21,9 +22,11 @@ public struct Angle<Radians: Real & ExpressibleByFloatLiteral & ExpressibleByInt
     public init(integerLiteral radians: Radians.IntegerLiteralType) {
         self.radians = Radians(integerLiteral: radians)
     }
+    
 }
 
 public extension Angle {
+    
     var degrees: Radians {
         radians * (360 / .tau)
     }
@@ -31,11 +34,14 @@ public extension Angle {
     init(degrees: Radians) {
         self.radians = degrees * (.tau / 360)
     }
+    
 }
 
 public extension Angle {
+    
     typealias ComponentType = Radians
     var complex: Complex<ComponentType> {
         Complex(length: 1, phase: radians)
     }
+    
 }

@@ -5,10 +5,10 @@
 //  Created by Nick on 20.08.24.
 //
 
-import Foundation
 import Numerics
 
 public struct Ratio<ValueType: Comparable & ExpressibleByFloatLiteral & ExpressibleByIntegerLiteral>: Comparable, ExpressibleByFloatLiteral, ExpressibleByIntegerLiteral {
+    
     public var value: ValueType
     
     public init(_ value: ValueType) {
@@ -26,9 +26,11 @@ public struct Ratio<ValueType: Comparable & ExpressibleByFloatLiteral & Expressi
     public init(integerLiteral value: ValueType.IntegerLiteralType) {
         self.value = ValueType(integerLiteral: value)
     }
+    
 }
 
 public extension Ratio where ValueType: FloatingPoint {
+    
     /// The angle associated with the ratio.
     var angle: ValueType {
         .tau * (1 - (1 / value))
@@ -50,4 +52,5 @@ public extension Ratio where ValueType: FloatingPoint {
         let delta = diff / value
         return first + delta
     }
+    
 }
