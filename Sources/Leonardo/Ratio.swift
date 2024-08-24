@@ -85,3 +85,12 @@ extension Ratio where ValueType: Real {
     }
         
 }
+
+extension Real {
+    
+    /// Returns the value formed by applying the provided ratio n times.
+    func applying(ratio: Ratio<Self>, n times: Int = 1) -> Self {
+        ratio.applied(to: self, n: times)
+    }
+    
+}
