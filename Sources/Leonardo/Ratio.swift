@@ -44,10 +44,10 @@ public extension Ratio where ValueType: FloatingPoint {
         value * number
     }
 
+    /// The weighted mean value between the first and second number provided.
     func mean(_ first: ValueType, _ second: ValueType) -> ValueType {
         let diff = second - first
         let delta = diff / value
         return first + delta
     }
-
 }
