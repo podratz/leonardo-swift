@@ -43,6 +43,11 @@ public extension Angle where Radians: FloatingPoint {
         self.radians = degrees * (.tau / 360)
     }
 
+    /// Returns the sum over n strides of the angle.
+    subscript(n: Int) -> Angle {
+        .init(Radians(n) * radians)
+    }
+    
 }
 
 public extension Angle where Radians: Real {
