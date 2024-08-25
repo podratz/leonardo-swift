@@ -81,6 +81,15 @@ public extension Ratio where ValueType: Real {
 
 }
 
+public extension Ratio where ValueType: Real {
+    
+    /// Returns the n-th application of the ratio's value onto itself.
+    subscript(n: Int) -> ValueType {
+        .pow(value, n)
+    }
+    
+}
+
 public extension Real where Self: FloatingPoint {
     
     /// Creates a geometric progression that follows the provided ratio.
