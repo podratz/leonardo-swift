@@ -40,8 +40,8 @@ extension Ratio: ExpressibleByIntegerLiteral where ValueType: ExpressibleByInteg
 public extension Ratio where ValueType: FloatingPoint {
     
     /// The angle associated with the ratio.
-    var angle: ValueType {
-        .tau * (1 - (1 / value))
+    var angle: Angle<ValueType> {
+        .init(.tau * (1 - (1 / value)))
     }
     
     /// The ratio's proportion of some value.
@@ -70,7 +70,7 @@ public extension Ratio where ValueType: Real {
     /// The sequence of angles derived from iterative application of this ratio.
     var angles: some Sequence<ValueType> {
         (0...).lazy.map { index in
-            applied(to: angle, n: index)
+            applied(to: angle.radians, n: index)
         }
     }
     
