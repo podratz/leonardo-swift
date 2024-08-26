@@ -16,9 +16,14 @@ extension SquaredCircle: View where Number == Double {
 
 #Preview {
     ZStack {
-        SquaredCircle(area: 10_000, cornerRadius: -1000)
-            .foregroundColor(.blue)
-        SquaredCircle(area: 10_000, cornerRadius: 40)
+        Circle(area: 50_000)
+            .opacity(0.2)
             .foregroundColor(.red)
+        SquaredCircle(area: 50_000)
+            .opacity(0.2)
+            .foregroundColor(.green)
+        Square(area: 50_000)
+            .opacity(0.2)
+            .foregroundColor(.blue)
     }
 }

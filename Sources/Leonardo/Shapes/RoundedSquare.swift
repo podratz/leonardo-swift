@@ -37,5 +37,12 @@ public struct SquaredCircle<Number: Real> {
         let completedSquareArea = area + squareFromCornersArea - circleFromCornersArea
         self.radius = Number.sqrt(completedSquareArea / 4)
     }
+    
+    public init(area: Number, roundness: Number = 0.5) {
+        let clampedRoundness = max(0, min(1, roundness))
+        let circle = Circle(area: area)
+        let cornerRadius = clampedRoundness * circle.radius
+        self.init(area: area, cornerRadius: cornerRadius)
+    }
 
 }
