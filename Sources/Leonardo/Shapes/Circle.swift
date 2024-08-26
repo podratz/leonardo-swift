@@ -15,6 +15,10 @@ public struct Circle<Number: Real> {
         .pow(radius, 2) * .pi
     }
     
+    public var diameter: Number {
+        2 * radius
+    }
+    
     public init(radius: Number) {
         self.radius = radius
     }
