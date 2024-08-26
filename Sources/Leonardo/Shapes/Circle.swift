@@ -7,19 +7,19 @@
 
 import Numerics
 
-struct Circle {
+public struct Circle {
     
-    let radius: Double
+    public let radius: Double
     
-    var area: Double {
+    public var area: Double {
         .pow(radius, 2) * .pi
     }
     
-    init(radius: Double) {
+    public init(radius: Double) {
         self.radius = radius
     }
     
-    init(area: Double) {
+    public init(area: Double) {
         self.radius = .sqrt(area / .pi)
     }
     

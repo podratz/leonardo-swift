@@ -7,12 +7,12 @@
 
 import Foundation
 
-struct SquaredCircle {
+public struct SquaredCircle {
     
-    let radius: Double
-    let cornerRadius: Double
+    public let radius: Double
+    public let cornerRadius: Double
     
-    var area: Double {
+    public var area: Double {
         let squareArea = pow(radius, 2)
         let squareFromCornersArea = pow(2 * cornerRadius, 2)
         let circleFromCornersArea = .pow(cornerRadius, 2) * .pi
