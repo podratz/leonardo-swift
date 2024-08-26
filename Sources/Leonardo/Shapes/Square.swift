@@ -7,19 +7,19 @@
 
 import Numerics
 
-public struct Square {
+public struct Square<Number: Real> {
     
-    public let length: Double
+    public let length: Number
     
-    public var area: Double {
+    public var area: Number {
         .pow(length, 2)
     }
     
-    public init(length: Double) {
+    public init(length: Number) {
         self.length = length
     }
     
-    public init(area: Double) {
+    public init(area: Number) {
         self.length = .sqrt(area)
     }
     
