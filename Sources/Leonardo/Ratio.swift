@@ -79,9 +79,9 @@ public extension Ratio where ValueType: Real {
         .pow(value, times) * number
     }
 
-    /// Returns the n-th application of the ratio's value onto itself.
-    subscript(n: Int) -> ValueType {
-        .pow(value, n)
+    /// Returns the n-th application of the ratio onto itself.
+    subscript(n: Int) -> Self {
+        Ratio(.pow(value, n))
     }
 
 }
