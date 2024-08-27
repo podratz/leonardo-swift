@@ -44,6 +44,11 @@ public extension Ratio where ValueType: FloatingPoint {
         .init(.tau * (1 - (1 / value)))
     }
     
+    /// The phase value derived from interpreting the ratio as an angle.
+    var phase: ValueType {
+        angle.radians.truncatingRemainder(dividingBy: .tau)
+    }
+    
     /// The ratio's proportion of some value.
     func proportion(of otherValue: ValueType) -> ValueType {
         otherValue / value
