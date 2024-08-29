@@ -89,6 +89,21 @@ public extension Ratio where ValueType: Real {
         Ratio(.pow(value, n))
     }
 
+    /// Returns the n-th application of the ratio onto itself.
+    subscript(angle index: Int) -> Angle<ValueType> {
+        Angle(ValueType(index) * angle.radians)
+    }
+
+    /// Returns the n-th application of the ratio onto itself.
+    subscript(phase index: Int) -> Angle<ValueType> {
+        self[angle: index].phase
+    }
+
+    /// Returns the n-th application of the ratio onto itself.
+    subscript(hue index: Int) -> ValueType {
+        self[phase: index].hue
+    }
+
 }
 
 public extension Real where Self: FloatingPoint {
