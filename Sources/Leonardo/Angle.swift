@@ -48,6 +48,18 @@ public extension Angle where Radians: FloatingPoint {
         .init(Radians(n) * radians)
     }
     
+    /// The phase value of the angle residing in the range [0, tau).
+    var phase: Self {
+        let remainder = radians.truncatingRemainder(dividingBy: .tau)
+        let adujustedRemainder = remainder < 0 ? remainder + .tau : remainder
+        return Self(adujustedRemainder)
+    }
+
+    /// The hue of the angle normalized to [0, 1].
+    var hue: Radians {
+        phase.radians / .tau
+    }
+
 }
 
 public extension Angle where Radians: Real {
