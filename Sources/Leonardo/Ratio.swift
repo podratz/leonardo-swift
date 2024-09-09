@@ -120,9 +120,9 @@ public extension Ratio where ValueType: Real {
         self[phase: index].hue
     }
     
-    func neighborhood(_ radius: Int, scale: ValueType = 1) -> Array<ValueType> {
-        let prefix = scale.sequence(downBy: self).prefix(radius).reversed()
-        let suffix = scale.sequence(upBy: self).prefix(radius)
+    func neighborhood(radius: Int) -> Array<ValueType> {
+        let prefix = ValueType(1).sequence(downBy: self).prefix(radius).reversed()
+        let suffix = ValueType(1).sequence(upBy: self).prefix(radius)
         return prefix.dropLast() + suffix
     }
 
