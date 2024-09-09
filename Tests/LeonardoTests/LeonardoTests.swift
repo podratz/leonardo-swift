@@ -1,12 +1,8 @@
-import XCTest
+import Testing
 @testable import Leonardo
 
-final class LeonardoTests: XCTestCase {
-    func testExample() throws {
-        // XCTest Documentation
-        // https://developer.apple.com/documentation/xctest
-
-        // Defining Test Cases and Test Methods
-        // https://developer.apple.com/documentation/xctest/defining_test_cases_and_test_methods
-    }
+@Test func goldenRatioCorrect() async throws {
+    let goldenRatio = Ratio<Double>.gold.value
+    let expected = String(format:"%.3f", goldenRatio)
+    #expect(expected == "1.618")
 }
