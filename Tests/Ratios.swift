@@ -24,3 +24,20 @@ func areMetallicRatiosIncreasing() {
         partialResult > ratio.value ? -1 : ratio.value
     }))
 }
+
+@Test("Are ratios named correctly", arguments: [
+    ("Platinum" , Ratio<Double>.platinum),
+    ("Gold"     , Ratio<Double>.gold),
+    ("Silver"   , Ratio<Double>.silver),
+    ("Bronce"   , Ratio<Double>.bronce),
+    ("Copper"   , Ratio<Double>.copper),
+    ("Nickel"   , Ratio<Double>.nickel),
+    ("Aluminium", Ratio<Double>.aluminium),
+    ("Iron"     , Ratio<Double>.iron),
+    ("Tin"      , Ratio<Double>.tin),
+    ("Lead"     , Ratio<Double>.lead),
+    ("Plastic"  , Ratio<Double>.plastic),
+])
+func isMetalCorrectlyNamed(name: String, ratio: Ratio<Double>) {
+    #expect(name == ratio.name)
+}
