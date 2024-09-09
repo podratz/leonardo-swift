@@ -50,7 +50,7 @@ func checkGoldenAngle() {
 
 @Test("Neighborhood is correct")
 func checkGoldenNeighborhoodCorrectness() {
-    let neighborhood = Ratio<Double>.gold.neighborhood(radius: 3)
+    let neighborhood = Ratio<Double>.gold.neighborhood(radius: 2)
     let expected = neighborhood.map { String(format: "%.3f", $0) }
     #expect(expected == ["0.382", "0.618", "1.000", "1.618", "2.618"])
 }
