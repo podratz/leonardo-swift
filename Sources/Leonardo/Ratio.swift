@@ -128,7 +128,12 @@ public extension Real where Self: FloatingPoint {
     func sequence(upBy ratio: Ratio<Self>) -> some Sequence<Self> {
         Swift.sequence(first: self) { $0 * ratio.value }
     }
-    
+
+    /// Creates a geometric progression that follows the provided ratio.
+    func sequence(downBy ratio: Ratio<Self>) -> some Sequence<Self> {
+        Swift.sequence(first: self) { $0 / ratio.value }
+    }
+
     /// Returns the value formed by applying the provided ratio n times.
     func applying(ratio: Ratio<Self>, n times: Int = 1) -> Self {
         ratio.applied(to: self, n: times)
