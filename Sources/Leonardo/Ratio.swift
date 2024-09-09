@@ -125,17 +125,10 @@ public extension Ratio where ValueType: Real {
 public extension Real where Self: FloatingPoint {
     
     /// Creates a geometric progression that follows the provided ratio.
-    func progression(_ ratio: Ratio<Self>) -> some Sequence<Self> {
-        progression(multiplying: ratio.value)
+    func sequence(upBy ratio: Ratio<Self>) -> some Sequence<Self> {
+        Swift.sequence(first: self) { $0 * ratio.value }
     }
     
-    /// Creates a geometric progression by iteratively multiplying the provided ratio.
-    func progression(multiplying ratio: Self) -> some Sequence<Self> {
-        sequence(first: self) { previous in
-            previous * ratio
-        }
-    }
-
     /// Returns the value formed by applying the provided ratio n times.
     func applying(ratio: Ratio<Self>, n times: Int = 1) -> Self {
         ratio.applied(to: self, n: times)
