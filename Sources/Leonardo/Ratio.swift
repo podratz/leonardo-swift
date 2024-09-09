@@ -119,11 +119,17 @@ public extension Ratio where ValueType: Real {
     subscript(hue index: Int) -> ValueType {
         self[phase: index].hue
     }
+    
+    func neighborhood(_ radius: Int, scale: ValueType = 1) -> Array<ValueType> {
+        let prefix = scale.sequence(downBy: self).prefix(radius).reversed()
+        let suffix = scale.sequence(upBy: self).prefix(radius)
+        return prefix.dropLast() + suffix
+    }
 
 }
 
 public extension Real where Self: FloatingPoint {
-    
+        
     /// Creates a geometric progression that follows the provided ratio.
     func sequence(upBy ratio: Ratio<Self>) -> some Sequence<Self> {
         Swift.sequence(first: self) { $0 * ratio.value }

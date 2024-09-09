@@ -47,3 +47,17 @@ func checkGoldenAngle() {
     let angle = Ratio<Double>.gold.angle.degrees
     #expect(angle.isApproximatelyEqual(to: 137.5, absoluteTolerance: 0.1))
 }
+
+@Test("Neighborhood is correct")
+func checkGoldenNeighborhoodCorrectness() {
+    let neighborhood = Ratio<Double>.gold.neighborhood(3)
+    let expected = neighborhood.map { String(format: "%.3f", $0) }
+    #expect(expected == ["0.382", "0.618", "1.000", "1.618", "2.618"])
+}
+
+@Test("Neighborhood is correct with scale argument")
+func checkGoldenNeighborhoodCorrectnessWithScale() {
+    let neighborhood = Ratio<Double>.gold.neighborhood(3, scale: 50)
+    let expected = neighborhood.map(Int.init)
+    #expect(expected == [19, 30, 50, 80, 130])
+}
