@@ -10,9 +10,11 @@ import Numerics
 public struct Ratio<ValueType: Comparable>: Comparable {
     
     public let value: ValueType
+    public let name: String?
     
-    public init(_ value: ValueType) {
+    public init(_ value: ValueType, name: String? = nil) {
         self.value = value
+        self.name = name
     }
     
     public static func < (lhs: Ratio<ValueType>, rhs: Ratio<ValueType>) -> Bool {
@@ -21,10 +23,17 @@ public struct Ratio<ValueType: Comparable>: Comparable {
     
 }
 
+extension Ratio: CustomStringConvertible {
+    public var description: String {
+        "\(name ?? "Unknown") ratio"
+    }
+}
+
 extension Ratio: ExpressibleByFloatLiteral where ValueType: ExpressibleByFloatLiteral {
     
     public init(floatLiteral value: ValueType.FloatLiteralType) {
         self.value = ValueType(floatLiteral: value)
+        self.name = nil
     }
     
 }
@@ -33,6 +42,7 @@ extension Ratio: ExpressibleByIntegerLiteral where ValueType: ExpressibleByInteg
     
     public init(integerLiteral value: ValueType.IntegerLiteralType) {
         self.value = ValueType(integerLiteral: value)
+        self.name = nil
     }
 
 }

@@ -20,7 +20,7 @@ public extension Ratio where ValueType: FloatingPoint {
             x -= f / (3 * x * x - 1)
         } while(abs(f) > .ulpOfOne && i < 10)
         
-        return .init(x)
+        return .init(x, name: "Plastic")
     }
 
 }

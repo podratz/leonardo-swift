@@ -1,7 +1,7 @@
 import Testing
 @testable import Leonardo
 
-@Test("Ratios rounded to 3 digits correct", arguments: [
+@Test("Round ratios correctly to 3 digits", arguments: [
     ("1.000", Ratio<Double>.platinum),
     ("1.618", Ratio<Double>.gold),
     ("2.414", Ratio<Double>.silver),
@@ -13,6 +13,6 @@ import Testing
     ("8.123", Ratio<Double>.tin),
     ("9.110", Ratio<Double>.lead),
     ("1.325", Ratio<Double>.plastic),
-]) func ratioCorrect(expected: String, ratio: Ratio<Double>) async throws {
+]) func roundRatio(expected: String, ratio: Ratio<Double>) {
     #expect(expected == String(format:"%.3f", ratio.value))
 }
