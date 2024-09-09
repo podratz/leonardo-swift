@@ -16,3 +16,11 @@ import Testing
 ]) func roundRatio(expected: String, ratio: Ratio<Double>) {
     #expect(expected == String(format:"%.3f", ratio.value))
 }
+
+
+@Test("Are metallic ratios increasing")
+func areMetallicRatiosIncreasing() {
+    #expect(0 < Ratio.metals.reduce(1, { partialResult, ratio in
+        partialResult > ratio.value ? -1 : ratio.value
+    }))
+}
