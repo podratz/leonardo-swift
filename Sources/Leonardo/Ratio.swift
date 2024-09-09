@@ -29,6 +29,12 @@ extension Ratio: CustomStringConvertible {
     }
 }
 
+extension Ratio: CustomDebugStringConvertible {
+    public var debugDescription: String {
+        "1:\(value)"
+    }
+}
+
 extension Ratio: ExpressibleByFloatLiteral where ValueType: ExpressibleByFloatLiteral {
     
     public init(floatLiteral value: ValueType.FloatLiteralType) {
