@@ -41,3 +41,9 @@ func areMetallicRatiosIncreasing() {
         partialResult > ratio.value ? -1 : ratio.value
     }))
 }
+
+@Test("Is golden angle approximately correct")
+func checkGoldenAngle() {
+    let angle = Ratio<Double>.gold.angle.degrees
+    #expect(angle.isApproximatelyEqual(to: 137.5, absoluteTolerance: 0.1))
+}
