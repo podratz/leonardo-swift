@@ -131,7 +131,7 @@ public extension Real where Self: FloatingPoint {
     
     /// Creates a geometric progression by iteratively multiplying the provided ratio.
     func progression(multiplying ratio: Self) -> some Sequence<Self> {
-        sequence(first: 1) { previous in
+        sequence(first: self) { previous in
             previous * ratio
         }
     }
