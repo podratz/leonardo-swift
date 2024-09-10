@@ -156,8 +156,9 @@ public extension Real where Self: FloatingPoint {
 extension VectorArithmetic {
     
     /// Returns a value with each component of this value multiplied by the given ratio.
-    public func scaled(by ratio: Ratio<Double>) -> Self {
-        scaled(by: ratio.value)
+    public func scaled(by ratio: Ratio<Double>, times n: Int = 1) -> Self {
+        let scalingFactor: Double = .pow(ratio.value, n)
+        return scaled(by: scalingFactor)
     }
     
 }
