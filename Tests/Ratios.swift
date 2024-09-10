@@ -44,8 +44,8 @@ func areMetallicRatiosIncreasing() {
 
 @Test("Is golden angle approximately correct")
 func checkGoldenAngle() {
-    let angle = Ratio<Double>.gold.angle.degrees
-    #expect(angle.isApproximatelyEqual(to: 137.5, absoluteTolerance: 0.1))
+    let goldenAngle = Ratio<Double>.gold.angle.degrees
+    #expect(goldenAngle.isApproximatelyEqual(to: 137.5, absoluteTolerance: 0.1))
 }
 
 @Test("Neighborhood is correct")
@@ -53,4 +53,11 @@ func checkGoldenNeighborhoodCorrectness() {
     let neighborhood = Ratio<Double>.gold.neighborhood(radius: 2)
     let expected = neighborhood.map { String(format: "%.3f", $0) }
     #expect(expected == ["0.382", "0.618", "1.000", "1.618", "2.618"])
+}
+
+@Test("Neighborhood with default Radius is correct")
+func checkGoldenNeighborhoodDefaultArgumentCorrectness() {
+    let neighborhood = Ratio<Double>.gold.neighborhood()
+    let expected = neighborhood.map { String(format: "%.3f", $0) }
+    #expect(expected == ["0.618", "1.000", "1.618"])
 }

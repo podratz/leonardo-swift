@@ -6,6 +6,7 @@
 //
 
 import Numerics
+import SwiftUICore
 
 public struct Ratio<ValueType: Comparable>: Comparable {
     
@@ -120,7 +121,7 @@ public extension Ratio where ValueType: Real {
         self[phase: index].hue
     }
     
-    func neighborhood(radius: Int) -> Array<ValueType> {
+    func neighborhood(radius: Int = 1) -> Array<ValueType> {
         let prefix = ValueType(1).sequence(downBy: self).prefix(radius + 1).reversed()
         let suffix = value.sequence(upBy: self).prefix(radius)
         return prefix + suffix
@@ -141,8 +142,13 @@ public extension Real where Self: FloatingPoint {
     }
 
     /// Returns the value formed by applying the provided ratio n times.
-    func applying(ratio: Ratio<Self>, n times: Int = 1) -> Self {
-        ratio.applied(to: self, n: times)
+    func upscaled(by ratio: Ratio<Self>, repeat times: Int = 1) -> Self {
+        self * .pow(ratio.value, times)
+    }
+    
+    /// Returns the value formed by applying the provided ratio n times.
+    func downscaled(by ratio: Ratio<Self>, repeat times: Int = 1) -> Self {
+        self / .pow(ratio.value, times)
     }
     
 }
