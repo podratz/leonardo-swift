@@ -85,20 +85,20 @@ public extension Ratio where ValueType: Real {
     /// A sequence of values created by iteratively applying this ratio.
     var values: some Sequence<ValueType> {
         (0...).lazy.map { index in
-            applied(to: value, n: index)
+            applied(to: value, times: index)
         }
     }
     
     /// The sequence of angles derived from iterative application of this ratio.
     var angles: some Sequence<ValueType> {
         (0...).lazy.map { index in
-            applied(to: angle.radians, n: index)
+            applied(to: angle.radians, times: index)
         }
     }
     
     /// The number which results from applying the ratio to another number.
-    func applied(to number: ValueType, n times: Int = 1) -> ValueType {
-        .pow(value, times) * number
+    func applied(to number: ValueType, times k: Int = 1) -> ValueType {
+        number * .pow(value, k)
     }
 
     /// Returns the n-th application of the ratio onto itself.
