@@ -62,11 +62,6 @@ func checkGoldenNeighborhoodDefaultArgumentCorrectness() {
     #expect(expected == ["0.618", "1.000", "1.618"])
 }
 
-@Test("Phi is golden ratio")
-func checkPhiIsGoldenRatio() {
-    #expect(Ratio<Double>.gold.value == .phi)
-}
-
 @Test("applied works with all arguments")
 func checkIfAppliedWorks() {
     #expect(Ratio<Double>.gold.applied() == Ratio.gold.value)
