@@ -80,11 +80,3 @@ func checkIfAppliedWorks() {
     #expect(Ratio<Double>.gold.applied(times: 0) == 1)
     #expect(Ratio<Double>.gold.applied(to: 0, times: 0) == 0)
 }
-
-import CoreGraphics
-
-@Test("Scale CGFloat")
-func checkScalingOfCGFloat() {
-    #expect(Int(CGFloat(50).scaled(by: .gold)) == 80)
-    #expect(Int(CGFloat(50).scaled(by: .gold, times: 2)) == 130)
-}

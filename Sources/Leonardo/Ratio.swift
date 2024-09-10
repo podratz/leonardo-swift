@@ -6,7 +6,6 @@
 //
 
 import Numerics
-import SwiftUICore
 
 public struct Ratio<ValueType: Comparable>: Comparable {
     
@@ -152,16 +151,6 @@ public extension Real where Self: FloatingPoint {
     func downscaled(by ratio: Ratio<Self>, times: Int = 1) -> Self {
         assert(times >= 0, "\(self) can only be downscaled a non-negative number of times")
         return self / .pow(ratio.value, times)
-    }
-    
-}
-
-extension VectorArithmetic {
-    
-    /// Returns a value with each component of this value multiplied by the given ratio.
-    public func scaled(by ratio: Ratio<Double>, times: Int = 1) -> Self {
-        let scalingFactor: Double = .pow(ratio.value, times)
-        return scaled(by: scalingFactor)
     }
     
 }
