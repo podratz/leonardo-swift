@@ -62,6 +62,11 @@ func checkGoldenNeighborhoodDefaultArgumentCorrectness() {
     #expect(expected == ["0.618", "1.000", "1.618"])
 }
 
+@Test("Phi is golden ratio")
+func checkPhiIsGoldenRatio() {
+    #expect(Ratio<Double>.gold.value == .phi)
+}
+
 import CoreGraphics
 
 @Test("Scale CGFloat")
