@@ -75,3 +75,7 @@ func checkIfAppliedWorks() {
     #expect(Ratio<Double>.gold.applied(times: 0) == 1)
     #expect(Ratio<Double>.gold.applied(to: 0, times: 0) == 0)
 }
+
+func checkSubscriptWorks() {
+    #expect(Ratio<Double>.gold[2] == Ratio<Double>.gold.applied(times: 2))
+}

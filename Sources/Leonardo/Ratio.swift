@@ -6,6 +6,7 @@
 //
 
 import Numerics
+import SwiftUICore
 
 public struct Ratio<ValueType: Comparable>: Comparable {
     
@@ -102,8 +103,8 @@ public extension Ratio where ValueType: Real {
     }
 
     /// Returns the n-th application of the ratio onto itself.
-    subscript(times: Int) -> Self {
-        .init(applied(times: times))
+    subscript(_ times: Int) -> ValueType {
+        applied(times: times)
     }
 
     /// Returns the n-th application of the ratio onto itself.
