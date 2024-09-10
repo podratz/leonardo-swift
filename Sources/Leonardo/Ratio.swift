@@ -97,14 +97,14 @@ public extension Ratio where ValueType: Real {
     }
     
     /// The number which results from applying the ratio to another number.
-    func applied(to number: ValueType = 1, times k: Int = 1) -> ValueType {
-        assert(k >= 0, "\(self) can only be applied a non-negative number of times")
-        return number * .pow(value, k)
+    func applied(to number: ValueType = 1, times: Int = 1) -> ValueType {
+        assert(times >= 0, "\(self) can only be applied a non-negative number of times")
+        return number * .pow(value, times)
     }
 
     /// Returns the n-th application of the ratio onto itself.
-    subscript(n: Int) -> Self {
-        .init(applied(times: n))
+    subscript(times: Int) -> Self {
+        .init(applied(times: times))
     }
 
     /// Returns the n-th application of the ratio onto itself.
@@ -143,13 +143,15 @@ public extension Real where Self: FloatingPoint {
     }
 
     /// Returns the value formed by applying the provided ratio n times.
-    func upscaled(by ratio: Ratio<Self>, repeat times: Int = 1) -> Self {
-        self * .pow(ratio.value, times)
+    func upscaled(by ratio: Ratio<Self>, times: Int = 1) -> Self {
+        assert(times >= 0, "\(self) can only be upscaled a non-negative number of times")
+        return self * .pow(ratio.value, times)
     }
     
     /// Returns the value formed by applying the provided ratio n times.
-    func downscaled(by ratio: Ratio<Self>, repeat times: Int = 1) -> Self {
-        self / .pow(ratio.value, times)
+    func downscaled(by ratio: Ratio<Self>, times: Int = 1) -> Self {
+        assert(times >= 0, "\(self) can only be downscaled a non-negative number of times")
+        return self / .pow(ratio.value, times)
     }
     
 }
@@ -157,8 +159,8 @@ public extension Real where Self: FloatingPoint {
 extension VectorArithmetic {
     
     /// Returns a value with each component of this value multiplied by the given ratio.
-    public func scaled(by ratio: Ratio<Double>, times n: Int = 1) -> Self {
-        let scalingFactor: Double = .pow(ratio.value, n)
+    public func scaled(by ratio: Ratio<Double>, times: Int = 1) -> Self {
+        let scalingFactor: Double = .pow(ratio.value, times)
         return scaled(by: scalingFactor)
     }
     
