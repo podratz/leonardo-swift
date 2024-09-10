@@ -73,6 +73,12 @@ func checkIfAppliedWorks() {
     #expect(Ratio<Double>.gold.applied(to: 50) == 50 * Ratio.gold.value)
     #expect(Ratio<Double>.gold.applied(times: 2) == .pow(Ratio.gold.value, 2))
     #expect(Ratio<Double>.gold.applied(to: 50, times: 2) == 50 * .pow(Ratio.gold.value, 2))
+    
+    // Edge cases
+    #expect(Ratio<Double>.gold.applied(to: -50, times: 2) == -50 * .pow(Ratio.gold.value, 2))
+    #expect(Ratio<Double>.gold.applied(to: 0) == 0)
+    #expect(Ratio<Double>.gold.applied(times: 0) == 1)
+    #expect(Ratio<Double>.gold.applied(to: 0, times: 0) == 0)
 }
 
 import CoreGraphics

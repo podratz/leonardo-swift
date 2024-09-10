@@ -98,7 +98,8 @@ public extension Ratio where ValueType: Real {
     
     /// The number which results from applying the ratio to another number.
     func applied(to number: ValueType = 1, times k: Int = 1) -> ValueType {
-        number * .pow(value, k)
+        assert(k >= 0, "\(self) can only be applied a non-negative number of times")
+        return number * .pow(value, k)
     }
 
     /// Returns the n-th application of the ratio onto itself.
