@@ -97,13 +97,13 @@ public extension Ratio where ValueType: Real {
     }
     
     /// The number which results from applying the ratio to another number.
-    func applied(to number: ValueType, times k: Int = 1) -> ValueType {
+    func applied(to number: ValueType = 1, times k: Int = 1) -> ValueType {
         number * .pow(value, k)
     }
 
     /// Returns the n-th application of the ratio onto itself.
     subscript(n: Int) -> Self {
-        Ratio(.pow(value, n))
+        .init(applied(times: n))
     }
 
     /// Returns the n-th application of the ratio onto itself.

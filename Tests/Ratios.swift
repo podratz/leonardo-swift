@@ -67,6 +67,14 @@ func checkPhiIsGoldenRatio() {
     #expect(Ratio<Double>.gold.value == .phi)
 }
 
+@Test("applied works with all arguments")
+func checkIfAppliedWorks() {
+    #expect(Ratio<Double>.gold.applied() == Ratio.gold.value)
+    #expect(Ratio<Double>.gold.applied(to: 50) == 50 * Ratio.gold.value)
+    #expect(Ratio<Double>.gold.applied(times: 2) == .pow(Ratio.gold.value, 2))
+    #expect(Ratio<Double>.gold.applied(to: 50, times: 2) == 50 * .pow(Ratio.gold.value, 2))
+}
+
 import CoreGraphics
 
 @Test("Scale CGFloat")
