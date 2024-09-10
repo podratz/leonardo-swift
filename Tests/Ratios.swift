@@ -61,3 +61,10 @@ func checkGoldenNeighborhoodDefaultArgumentCorrectness() {
     let expected = neighborhood.map { String(format: "%.3f", $0) }
     #expect(expected == ["0.618", "1.000", "1.618"])
 }
+
+import CoreGraphics
+
+@Test("Scale CGFloat")
+func checkScalingOfCGFloat() {
+    #expect(Int(CGFloat(50).scaled(by: .gold)) == 80)
+}
