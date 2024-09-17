@@ -68,6 +68,7 @@ public extension Ratio where ValueType: FloatingPoint {
         return first + delta
     }
 
+    /// Computes the geometric neighborhood of the ratio such that the original ratio is in the center element of the array.
     func neighborhood(radius: Int = 1) -> Array<ValueType> {
         let prefix = ValueType(1).sequence(downBy: self).prefix(radius + 1).reversed()
         let suffix = value.sequence(upBy: self).prefix(radius)
