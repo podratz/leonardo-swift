@@ -7,7 +7,7 @@
 
 import Numerics
 
-public extension Ratio where ValueType: FloatingPoint {
+public extension GeometricRatio where ValueType: FloatingPoint {
 
     nonisolated static var plastic: Self {
         var x: ValueType = 1

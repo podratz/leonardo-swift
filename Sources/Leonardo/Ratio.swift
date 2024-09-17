@@ -7,10 +7,13 @@
 
 import Numerics
 
+/// A typealias to the commonly used Double variant of the `GeometricRatio` type.
+public typealias Ratio = GeometricRatio<Double>
+
 /// The Ratio type embodies the concept of a geometric ratio. It is intended to make UI work based on geometric relationships easier and more intuitive.
 /// The type provides many properties and methods that allow for convenient access to many ratios' irrational properties.
 /// Several common ratios are provided and made accessible as static computed variables. Try `Ratio<Double>.golden` to get started.
-public struct Ratio<ValueType: Comparable>: Comparable {
+public struct GeometricRatio<ValueType: Comparable>: Comparable {
     
     public let value: ValueType
     public let name: String?
@@ -20,25 +23,25 @@ public struct Ratio<ValueType: Comparable>: Comparable {
         self.name = name
     }
     
-    public static func < (lhs: Ratio<ValueType>, rhs: Ratio<ValueType>) -> Bool {
+    public static func < (lhs: GeometricRatio<ValueType>, rhs: GeometricRatio<ValueType>) -> Bool {
         lhs.value < rhs.value
     }
     
 }
 
-extension Ratio: CustomStringConvertible {
+extension GeometricRatio: CustomStringConvertible {
     public var description: String {
         "\(name ?? "Unnamed") ratio"
     }
 }
 
-extension Ratio: CustomDebugStringConvertible {
+extension GeometricRatio: CustomDebugStringConvertible {
     public var debugDescription: String {
         "1:\(value) [\(description)]"
     }
 }
 
-extension Ratio: ExpressibleByFloatLiteral where ValueType: ExpressibleByFloatLiteral {
+extension GeometricRatio: ExpressibleByFloatLiteral where ValueType: ExpressibleByFloatLiteral {
     
     public init(floatLiteral value: ValueType.FloatLiteralType) {
         self.value = ValueType(floatLiteral: value)
@@ -47,7 +50,7 @@ extension Ratio: ExpressibleByFloatLiteral where ValueType: ExpressibleByFloatLi
     
 }
 
-extension Ratio: ExpressibleByIntegerLiteral where ValueType: ExpressibleByIntegerLiteral {
+extension GeometricRatio: ExpressibleByIntegerLiteral where ValueType: ExpressibleByIntegerLiteral {
     
     public init(integerLiteral value: ValueType.IntegerLiteralType) {
         self.value = ValueType(integerLiteral: value)
@@ -56,7 +59,7 @@ extension Ratio: ExpressibleByIntegerLiteral where ValueType: ExpressibleByInteg
 
 }
 
-public extension Ratio where ValueType: FloatingPoint {
+public extension GeometricRatio where ValueType: FloatingPoint {
 
     /// The ratio's proportion of some value.
     func proportion(of otherValue: ValueType) -> ValueType {
@@ -101,7 +104,7 @@ public extension Ratio where ValueType: FloatingPoint {
 
 }
 
-public extension Ratio where ValueType == Double {
+public extension GeometricRatio where ValueType == Double {
 
     /// The angle associated with the ratio.
     var angle: Angle {

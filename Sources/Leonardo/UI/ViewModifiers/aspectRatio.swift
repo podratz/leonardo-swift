@@ -11,7 +11,7 @@ public extension View {
     
     @inlinable
     nonisolated func aspectRatio(
-        _ aspectRatio: Ratio<Float>,
+        _ aspectRatio: GeometricRatio<Float>,
         contentMode: ContentMode
     ) -> some View {
         self.aspectRatio(CGFloat(aspectRatio.value), contentMode: contentMode)
@@ -19,7 +19,7 @@ public extension View {
     
     @inlinable
     nonisolated func aspectRatio(
-        _ aspectRatio: Ratio<Double>,
+        _ aspectRatio: GeometricRatio<Double>,
         contentMode: ContentMode
     ) -> some View {
         self.aspectRatio(CGFloat(aspectRatio.value), contentMode: contentMode)
@@ -27,7 +27,7 @@ public extension View {
     
     @inlinable
     nonisolated func aspectRatio(
-        _ aspectRatio: Ratio<CGFloat>,
+        _ aspectRatio: GeometricRatio<CGFloat>,
         contentMode: ContentMode
     ) -> some View {
         self.aspectRatio(CGFloat(aspectRatio.value), contentMode: contentMode)

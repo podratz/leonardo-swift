@@ -7,7 +7,7 @@
 
 import Foundation
 
-public extension Ratio where ValueType: FloatingPoint {
+public extension GeometricRatio where ValueType: FloatingPoint {
     
     static var metals: [Self] {[
         platinum, golden, silver, bronce, copper, nickel, aluminium, iron, tin, lead

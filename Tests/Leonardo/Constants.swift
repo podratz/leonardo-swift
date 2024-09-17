@@ -3,7 +3,7 @@ import Testing
 
 @Test("Phi is golden ratio")
 func checkPhiIsGoldenRatio() {
-    #expect(Ratio<Double>.golden.value == .phi)
+    #expect(GeometricRatio<Double>.golden.value == .phi)
 }
 
 @Test("Tau is correct")

@@ -8,7 +8,7 @@
 public extension Angle {
 
     /// Initializes an `Angle` from the provided ratio.
-    init(_ ratio: Ratio<Double>) {
+    init(_ ratio: GeometricRatio<Double>) {
         self = ratio.angle
     }
 
