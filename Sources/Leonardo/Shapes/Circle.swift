@@ -5,7 +5,7 @@
 //  Created by Nick on 25.08.24.
 //
 
-import Numerics
+import RealModule
 
 public struct Circle<Number: Real> {
     

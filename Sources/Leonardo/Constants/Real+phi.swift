@@ -5,7 +5,7 @@
 //  Created by Nick on 23.08.24.
 //
 
-import Numerics
+import RealModule
 
 public extension Real {
     

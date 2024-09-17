@@ -5,7 +5,7 @@
 //  Created by Nick on 24.08.24.
 //
 
-import Numerics
+import RealModule
 
 public extension GeometricRatio where ValueType: FloatingPoint {
 

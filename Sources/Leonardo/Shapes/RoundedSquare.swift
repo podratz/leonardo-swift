@@ -5,7 +5,7 @@
 //  Created by Nick on 26.08.24.
 //
 
-import Numerics
+import RealModule
 
 public struct SquaredCircle<Number: Real> {
     
