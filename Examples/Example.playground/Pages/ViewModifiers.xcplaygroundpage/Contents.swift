@@ -2,9 +2,7 @@ import Leonardo
 import PlaygroundSupport
 import SwiftUI
 
-let ratio: Ratio = .gold
-
-
+let ratio: Ratio = .golden
 
 // MARK: - Rectangle Preview
 
