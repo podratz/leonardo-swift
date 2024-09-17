@@ -105,7 +105,7 @@ public extension Ratio where ValueType == Double {
 
     /// The angle associated with the ratio.
     var angle: Angle {
-        .init(radians: .tau * (1 - (1 / value)))
+        .init(radians: .tau * (1 - 1 / value))
     }
 
     /// The sequence of angles derived from iterative application of this ratio.
