@@ -12,7 +12,7 @@ public typealias Ratio = GeometricRatio<Double>
 
 /// The Ratio type embodies the concept of a geometric ratio. It is intended to make UI work based on geometric relationships easier and more intuitive.
 /// The type provides many properties and methods that allow for convenient access to many ratios' irrational properties.
-/// Several common ratios are provided and made accessible as static computed variables. Try `Ratio<Double>.golden` to get started.
+/// Several common ratios are provided and made accessible as static computed variables. Try `Ratio.golden` to get started.
 public struct GeometricRatio<ValueType: Comparable>: Comparable {
     
     public let value: ValueType

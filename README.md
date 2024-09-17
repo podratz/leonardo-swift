@@ -17,7 +17,7 @@ Defining your own ratios is easy!
 ```swift
 import Leonardo
 
-extension Ratio where ValueType == Double {
+extension GeometricRatio where ValueType == Double {
     static var double: Self { .init(2) }
 }
 ```

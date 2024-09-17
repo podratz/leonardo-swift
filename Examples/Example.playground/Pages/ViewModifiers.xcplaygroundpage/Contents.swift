@@ -2,7 +2,7 @@ import Leonardo
 import PlaygroundSupport
 import SwiftUI
 
-let ratio: Ratio<Double> = .gold
+let ratio: Ratio = .gold
 
 
 
@@ -23,7 +23,7 @@ struct Canvas<Content: View>: View {
 }
 
 struct RatioRectangle: View {
-    let ratio: Ratio<Double>
+    let ratio: Ratio
     
     var body: some View {
         Rectangle()

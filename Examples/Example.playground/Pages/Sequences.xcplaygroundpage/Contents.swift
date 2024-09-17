@@ -10,3 +10,9 @@ g.debugDescription
 
 Ratio.golden.value
 s.value
+
+extension GeometricRatio where ValueType == Double {
+    static var double: Self { .init(2) }
+}
+
+Ratio.double.value
