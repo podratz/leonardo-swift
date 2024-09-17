@@ -26,13 +26,13 @@ public struct Ratio<ValueType: Comparable>: Comparable {
 
 extension Ratio: CustomStringConvertible {
     public var description: String {
-        "\(name ?? "Unknown") ratio"
+        "\(name ?? "Unnamed") ratio"
     }
 }
 
 extension Ratio: CustomDebugStringConvertible {
     public var debugDescription: String {
-        "1:\(value)"
+        "1:\(value) [\(description)]"
     }
 }
 

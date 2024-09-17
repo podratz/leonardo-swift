@@ -1,7 +1,8 @@
-//: [Previous](@previous)
+import Leonardo
 
-import Foundation
+let g = Ratio<Double>.golden
 
-var greeting = "Hello, playground"
+g.value
 
-//: [Next](@next)
+g.description
+g.debugDescription
