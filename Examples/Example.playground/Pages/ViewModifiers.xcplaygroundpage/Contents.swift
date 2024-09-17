@@ -14,7 +14,7 @@ PlaygroundPage.current.setLiveView(
         .frame(length: canvasLength)
         .overlay(
             Rectangle()
-                .fill(.yellow)
+                .fill(ratio.angle.color)
                 .aspectRatio(ratio)
                 .frame(width: contentWidth)
         )
