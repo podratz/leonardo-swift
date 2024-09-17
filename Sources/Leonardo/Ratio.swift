@@ -23,7 +23,7 @@ public struct GeometricRatio<ValueType: Comparable>: Comparable {
         self.name = name
     }
     
-    public static func < (lhs: GeometricRatio<ValueType>, rhs: GeometricRatio<ValueType>) -> Bool {
+    public static func < (lhs: Self, rhs: Self) -> Bool {
         lhs.value < rhs.value
     }
     
