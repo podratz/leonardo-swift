@@ -4,7 +4,7 @@ Leonardo is a Swift Library that makes working with geometric ratios, such as th
 
 ## Intention behind this project
 
-This library is inspired by another library I wrote a while back called Leonardo-python, which provides similiar functionality with syntactic sugar for the python language.
+This library is inspired by another library I wrote a while back called [leonardo-python](https://github.com/podratz/leonardo-python), which provides similiar functionality with syntactic sugar for the python language.
 
 ## How to get started
 
