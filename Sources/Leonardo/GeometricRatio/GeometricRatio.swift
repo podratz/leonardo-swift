@@ -134,3 +134,14 @@ public extension GeometricRatio where ValueType == Double {
     }
 
 }
+
+import SwiftUICore
+
+extension GeometricRatio where ValueType == Double {
+
+    /// Returns the n-th application of the ratio onto itself.
+    subscript(color index: Int) -> Color {
+        self[phase: index].color
+    }
+
+}
