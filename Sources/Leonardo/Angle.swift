@@ -7,4 +7,5 @@
 
 import SwiftUICore
 
+/// A typealias to the Angle type defined in Apple's SwiftUICore.
 public typealias Angle = SwiftUICore.Angle
