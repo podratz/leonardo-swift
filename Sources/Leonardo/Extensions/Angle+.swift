@@ -5,8 +5,6 @@
 //  Created by Nick on 20.08.24.
 //
 
-import SwiftUICore
-
 public extension Angle {
 
     /// The phase of the angle in the range [0, tau).

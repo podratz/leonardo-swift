@@ -6,7 +6,6 @@
 //
 
 import Numerics
-import SwiftUICore
 
 public struct Ratio<ValueType: Comparable>: Comparable {
     
@@ -98,8 +97,6 @@ public extension Ratio where ValueType: FloatingPoint {
     }
 
 }
-
-import SwiftUICore
 
 public extension Ratio where ValueType == Double {
 
