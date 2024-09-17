@@ -3,7 +3,7 @@ import Testing
 
 @Test("Round ratios correctly to 3 digits", arguments: [
     ("1.000", .platinum ),
-    ("1.618", .gold     ),
+    ("1.618", .golden   ),
     ("2.414", .silver   ),
     ("3.303", .bronce   ),
     ("4.236", .copper   ),
@@ -20,7 +20,7 @@ func roundRatio(rounded: String, ratio: Ratio<Double>) {
 
 @Test("Are ratios named correctly", arguments: [
     ("Platinum",  .platinum ),
-    ("Gold",      .gold     ),
+    ("Golden",    .golden   ),
     ("Silver",    .silver   ),
     ("Bronce",    .bronce   ),
     ("Copper",    .copper   ),
@@ -44,38 +44,38 @@ func areMetallicRatiosIncreasing() {
 
 @Test("Is golden angle approximately correct")
 func checkGoldenAngle() {
-    let goldenAngle = Ratio<Double>.gold.angle.degrees
+    let goldenAngle = Ratio<Double>.golden.angle.degrees
     #expect(goldenAngle.isApproximatelyEqual(to: 137.5, absoluteTolerance: 0.1))
 }
 
 @Test("Neighborhood is correct")
 func checkGoldenNeighborhoodCorrectness() {
-    let neighborhood = Ratio<Double>.gold.neighborhood(radius: 2)
+    let neighborhood = Ratio<Double>.golden.neighborhood(radius: 2)
     let expected = neighborhood.map { String(format: "%.3f", $0) }
     #expect(expected == ["0.382", "0.618", "1.000", "1.618", "2.618"])
 }
 
 @Test("Neighborhood with default Radius is correct")
 func checkGoldenNeighborhoodDefaultArgumentCorrectness() {
-    let neighborhood = Ratio<Double>.gold.neighborhood()
+    let neighborhood = Ratio<Double>.golden.neighborhood()
     let expected = neighborhood.map { String(format: "%.3f", $0) }
     #expect(expected == ["0.618", "1.000", "1.618"])
 }
 
 @Test("applied works with all arguments")
 func checkIfAppliedWorks() {
-    #expect(Ratio<Double>.gold.applied() == Ratio.gold.value)
-    #expect(Ratio<Double>.gold.applied(to: 50) == 50 * Ratio.gold.value)
-    #expect(Ratio<Double>.gold.applied(times: 2) == .pow(Ratio.gold.value, 2))
-    #expect(Ratio<Double>.gold.applied(to: 50, times: 2) == 50 * .pow(Ratio.gold.value, 2))
-    
+    #expect(Ratio<Double>.golden.applied() == Ratio.golden.value)
+    #expect(Ratio<Double>.golden.applied(to: 50) == 50 * Ratio.golden.value)
+    #expect(Ratio<Double>.golden.applied(times: 2) == .pow(Ratio.golden.value, 2))
+    #expect(Ratio<Double>.golden.applied(to: 50, times: 2) == 50 * .pow(Ratio.golden.value, 2))
+
     // Edge cases
-    #expect(Ratio<Double>.gold.applied(to: -50, times: 2) == -50 * .pow(Ratio.gold.value, 2))
-    #expect(Ratio<Double>.gold.applied(to: 0) == 0)
-    #expect(Ratio<Double>.gold.applied(times: 0) == 1)
-    #expect(Ratio<Double>.gold.applied(to: 0, times: 0) == 0)
+    #expect(Ratio<Double>.golden.applied(to: -50, times: 2) == -50 * .pow(Ratio.golden.value, 2))
+    #expect(Ratio<Double>.golden.applied(to: 0) == 0)
+    #expect(Ratio<Double>.golden.applied(times: 0) == 1)
+    #expect(Ratio<Double>.golden.applied(to: 0, times: 0) == 0)
 }
 
 func checkSubscriptWorks() {
-    #expect(Ratio<Double>.gold[2] == Ratio<Double>.gold.applied(times: 2))
+    #expect(Ratio<Double>.golden[2] == Ratio<Double>.golden.applied(times: 2))
 }

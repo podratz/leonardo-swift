@@ -3,12 +3,12 @@ import Testing
 
 @Test("Phi is golden ratio")
 func checkPhiIsGoldenRatio() {
-    #expect(Ratio<Double>.gold.value == .phi)
+    #expect(Ratio<Double>.golden.value == .phi)
 }
 
 @Test("Golden angle is correct")
 func checkGoldenAngleIsCorrect() {
-    #expect(Ratio<Double>.gold.angle.radians == .goldenAngle)
+    #expect(Ratio<Double>.golden.angle.radians == .goldenAngle)
 }
 
 @Test("Tau is correct")
