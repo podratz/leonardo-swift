@@ -9,7 +9,6 @@ import SwiftUI
 
 public extension View {
     
-    @inlinable
     nonisolated func aspectRatio(
         _ aspectRatio: GeometricRatio<Float>,
         contentMode: ContentMode
@@ -17,7 +16,6 @@ public extension View {
         self.aspectRatio(CGFloat(aspectRatio.value), contentMode: contentMode)
     }
     
-    @inlinable
     nonisolated func aspectRatio(
         _ aspectRatio: GeometricRatio<Double>,
         contentMode: ContentMode
@@ -25,7 +23,6 @@ public extension View {
         self.aspectRatio(CGFloat(aspectRatio.value), contentMode: contentMode)
     }
     
-    @inlinable
     nonisolated func aspectRatio(
         _ aspectRatio: GeometricRatio<CGFloat>,
         contentMode: ContentMode
