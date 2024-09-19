@@ -10,8 +10,8 @@ import SwiftUI
 public struct ProportionalRectangle: InsettableShape {
 
     public var animatableData: Double {
-        get { proportion }
-        set { proportion = newValue }
+        get { aspectRatio }
+        set { aspectRatio = newValue }
     }
 
     public func inset(by amount: CGFloat) -> ProportionalRectangle {
@@ -24,7 +24,7 @@ public struct ProportionalRectangle: InsettableShape {
         Path { path in
 
             if orientation == .landscape {
-                let shortSide = rect.height / proportion
+                let shortSide = rect.height / aspectRatio
 
                 let top = rect.midY - (shortSide / 2) + inset
                 let bottom = rect.midY + (shortSide / 2) - inset
@@ -38,7 +38,7 @@ public struct ProportionalRectangle: InsettableShape {
                 path.addLine(to: .init(x: right, y: top))
                 path.closeSubpath()
             } else {
-                let shortSide = rect.width / proportion
+                let shortSide = rect.width / aspectRatio
 
                 let top = 0 + inset
                 let bottom = rect.height - inset
@@ -56,8 +56,8 @@ public struct ProportionalRectangle: InsettableShape {
     }
 
     /// Creates a rectangle with the provided ratio for its sides.
-    public init(proportion: CGFloat, orientation: Orientation = .landscape) {
-        self.proportion = proportion
+    public init(aspectRatio: CGFloat, orientation: Orientation = .landscape) {
+        self.aspectRatio = aspectRatio
         self.orientation = orientation
     }
 
@@ -65,7 +65,7 @@ public struct ProportionalRectangle: InsettableShape {
     public enum Orientation : Sendable { case landscape, portrait }
 
     private let orientation: Orientation
-    private var proportion: CGFloat
+    private var aspectRatio: CGFloat
     private var inset: CGFloat = 0
 
 }
@@ -74,7 +74,7 @@ extension ProportionalRectangle {
 
     /// Creates a rectangle with the provided ratio used for
     public init(ratio: Ratio, orientation: Orientation = .landscape) {
-        self.init(proportion: ratio.value, orientation: orientation)
+        self.init(aspectRatio: ratio.value, orientation: orientation)
     }
 
 }
