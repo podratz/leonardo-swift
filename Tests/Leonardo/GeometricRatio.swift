@@ -27,3 +27,25 @@ func cgFloatRatioSubscript() {
     let doubleRatio = Ratio.golden
     #expect(Double(cgRatio[1]) == doubleRatio[1])
 }
+
+@Test("Ratio upscaled() works")
+func upscaled() {
+    #expect(10.upscaled(by: .golden).isApproximatelyEqual(to: 16.18, absoluteTolerance: 0.001))
+}
+
+@Test("Ratio downscaled() works")
+func downscaled() {
+    #expect(10.downscaled(by: .golden).isApproximatelyEqual(to: 6.18, absoluteTolerance: 0.001))
+}
+
+@Test("Ratio upscaled() work for CGFloat")
+func cgFloatUpscaled() {
+    let cgRatio = GeometricRatio<CGFloat>.golden
+    #expect(CGFloat(10).upscaled(by: cgRatio).isApproximatelyEqual(to: 16.18, absoluteTolerance: 0.001))
+}
+
+@Test("Ratio downscaled() work for CGFloat")
+func cgFloatDownscaled() {
+    let cgRatio = GeometricRatio<CGFloat>.golden
+    #expect(CGFloat(10).downscaled(by: cgRatio).isApproximatelyEqual(to: 6.18, absoluteTolerance: 0.001))
+}
