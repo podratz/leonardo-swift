@@ -5,6 +5,8 @@
 //  Created by Nick on 17.09.24.
 //
 
+import RealModule
+
 /// The Ratio type embodies the concept of a geometric ratio. It is intended to make UI work based on geometric relationships easier and more intuitive.
 /// The type provides many properties and methods that allow for convenient access to many ratios' irrational properties.
 /// Several common ratios are provided and made accessible as static computed variables. Try `Ratio.golden` to get started.
@@ -54,6 +56,15 @@ extension GeometricRatio: ExpressibleByIntegerLiteral where ValueType: Expressib
 
 }
 
+public extension GeometricRatio where ValueType: Real {
+
+    /// Returns the n-th application of the ratio onto itself.
+    subscript(_ times: Int) -> ValueType {
+        .pow(value, times)
+    }
+
+}
+
 public extension GeometricRatio where ValueType: FloatingPoint {
 
     /// The ratio's proportion of some value.
@@ -90,11 +101,6 @@ public extension GeometricRatio where ValueType: FloatingPoint {
         (0...).lazy.map { index in
             applied(to: value, times: index)
         }
-    }
-
-    /// Returns the n-th application of the ratio onto itself.
-    subscript(_ times: Int) -> ValueType {
-        applied(times: times)
     }
 
 }
