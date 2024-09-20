@@ -5,6 +5,7 @@
 //  Created by Nick on 20.09.24.
 //
 
+import CoreGraphics
 import Testing
 @testable import Leonardo
 
@@ -18,4 +19,11 @@ func positiveRatioSubscript() {
 func negativeRatioSubscript() {
     let ratio = Ratio.golden
     #expect(ratio[-1] == 1 / ratio[1])
+}
+
+@Test("Ratio subscript works for CGFloat")
+func cgFloatRatioSubscript() {
+    let cgRatio = GeometricRatio<CGFloat>.golden
+    let doubleRatio = Ratio.golden
+    #expect(Double(cgRatio[1]) == doubleRatio[1])
 }

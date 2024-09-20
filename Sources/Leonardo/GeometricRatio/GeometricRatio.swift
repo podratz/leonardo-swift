@@ -65,6 +65,15 @@ public extension GeometricRatio where ValueType: Real {
 
 }
 
+public extension GeometricRatio where ValueType == CGFloat {
+
+    /// Returns the n-th application of the ratio onto itself.
+    subscript(_ times: Int) -> ValueType {
+        pow(value, CGFloat(times))
+    }
+
+}
+
 public extension GeometricRatio where ValueType: FloatingPoint {
 
     /// The ratio's proportion of some value.
