@@ -17,4 +17,11 @@ public extension FloatingPoint {
         Swift.sequence(first: self) { $0 / ratio.value }
     }
 
+    /// Computes the geometric neighborhood for the given value with the ratio such that the given value is the center element.
+    func neighborhood(ratio: GeometricRatio<Self>, radius: Int = 1) -> Array<Self> {
+        let prefix = GeometricRatio<Self>.ValueType(1).sequence(downBy: ratio).prefix(radius + 1).reversed()
+        let suffix = GeometricRatio<Self>.ValueType(1).sequence(upBy: ratio).dropFirst().prefix(radius)
+        return prefix + suffix
+    }
+
 }

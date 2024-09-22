@@ -26,3 +26,10 @@ func checkIfNumberDownscalesCorrectly() {
     let scaled = 50.downscaled(by: .golden)
     #expect(Int(scaled) == 30)
 }
+
+@Test("Neighborhood on floating point")
+func testNeighborhoodOnFloatingPoint() {
+    let ratio: Ratio = .golden
+    let neighborhood = 1.neighborhood(ratio: ratio)
+    #expect(neighborhood == [1 / ratio.value, 1, ratio.value])
+}
