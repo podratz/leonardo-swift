@@ -71,6 +71,11 @@ extension GeometricRatio: CustomDebugStringConvertible {
 
 public extension GeometricRatio where ValueType: FloatingPoint {
 
+    /// The reciprocal of the ratio. The invariant (1 / value == reciprocal) holds.
+    var reciprocal: ValueType {
+        1 / value
+    }
+
     /// The ratio's proportion of some value.
     func proportion(of otherValue: ValueType) -> ValueType {
         otherValue / value

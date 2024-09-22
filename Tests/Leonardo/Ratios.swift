@@ -92,3 +92,9 @@ func ratiosAreEqualWithSameValueAlone() {
     let doublingNamed = Ratio(2, name: "Doubling")
     #expect(doublingUnnamed == doublingNamed)
 }
+
+@Test("the reciprocal of a ratio")
+func testReciprocal() {
+    let ratio = Ratio.golden
+    #expect(1 / ratio.value == ratio.reciprocal)
+}
