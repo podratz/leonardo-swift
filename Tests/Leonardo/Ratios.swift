@@ -76,6 +76,7 @@ func checkIfAppliedWorks() {
     #expect(Ratio.golden.applied(to: 0, times: 0) == 0)
 }
 
+@Test("subscript with positive integer")
 func checkSubscriptWorks() {
     #expect(Ratio.golden[2] == Ratio.golden.applied(times: 2))
 }
