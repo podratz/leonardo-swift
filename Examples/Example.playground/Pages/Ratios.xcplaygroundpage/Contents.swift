@@ -2,8 +2,8 @@ import Leonardo
 
 // MARK: - Create a custom geometric ratio.
 
-let double: Ratio = 2
+let doubling: Ratio = 2
 
-for neighbor in double.neighborhood(radius: 4) {
+for neighbor in doubling.neighborhood(radius: 4) {
     neighbor
 }

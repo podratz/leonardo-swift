@@ -17,7 +17,7 @@ Defining your own ratios is easy!
 ```swift
 import Leonardo
 
-let double: Ratio = 2
+let doubling: Ratio = 2
 ```
 
 ## Interactive Examples
