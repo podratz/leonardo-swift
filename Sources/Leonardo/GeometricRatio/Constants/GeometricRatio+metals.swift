@@ -15,7 +15,6 @@ public extension GeometricRatio where ValueType: FloatingPoint {
     
     static var platinum:  Self { .init((0 + sqrt( 4)) / 2, name: "Platinum" ) }
     static var golden:    Self { .init((1 + sqrt( 5)) / 2, name: "Golden"   ) }
-    static var gold:      Self { .init((1 + sqrt( 5)) / 2, name: "Golden"   ) }
     static var silver:    Self { .init((2 + sqrt( 8)) / 2, name: "Silver"   ) }
     static var bronce:    Self { .init((3 + sqrt(13)) / 2, name: "Bronce"   ) }
     static var copper:    Self { .init((4 + sqrt(20)) / 2, name: "Copper"   ) }

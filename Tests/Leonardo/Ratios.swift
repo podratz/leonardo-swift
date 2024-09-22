@@ -83,7 +83,9 @@ func checkSubscriptWorks() {
 
 @Test("equality for ratios")
 func ratiosAreEqual() {
-    #expect(Ratio.golden == Ratio.gold)
+    let doublingUnnamed: Ratio = Ratio(2, name: "Doubling")
+    let doublingNamed = Ratio(2, name: "Doubling")
+    #expect(doublingUnnamed == doublingNamed)
 }
 
 @Test("equality for ratios with just same value")
