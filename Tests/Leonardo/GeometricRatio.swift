@@ -53,7 +53,7 @@ func cgFloatDownscaled() {
 @Test("Expressible by integer literal")
 func intLiteral() {
     let ratio: Ratio = 3
-    #expect(ratio.value == 3)
+    #expect(ratio.value == 3.0)
 }
 
 @Test("Expressible by float literal")
