@@ -8,5 +8,5 @@ func checkPhiIsGoldenRatio() {
 
 @Test("Tau is correct")
 func checkTauIsCorrect() {
-    #expect(2 * Double.pi == .tau)
+    #expect(2.0 * .pi == .tau)
 }
