@@ -80,3 +80,15 @@ func checkIfAppliedWorks() {
 func checkSubscriptWorks() {
     #expect(Ratio.golden[2] == Ratio.golden.applied(times: 2))
 }
+
+@Test("equality for ratios")
+func ratiosAreEqual() {
+    #expect(Ratio.golden == Ratio.gold)
+}
+
+@Test("equality for ratios with just same value")
+func ratiosAreEqualWithSameValueAlone() {
+    let doublingUnnamed: Ratio = 2
+    let doublingNamed = Ratio(2, name: "Doubling")
+    #expect(doublingUnnamed == doublingNamed)
+}

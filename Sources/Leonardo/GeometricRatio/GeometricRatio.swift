@@ -12,7 +12,7 @@ import RealModule
 /// The Ratio type embodies the concept of a geometric ratio. It is intended to make UI work based on geometric relationships easier and more intuitive.
 /// The type provides many properties and methods that allow for convenient access to many ratios' irrational properties.
 /// Several common ratios are provided and made accessible as static computed variables. Try `Ratio.golden` to get started.
-public struct GeometricRatio<ValueType: Comparable>: Comparable {
+public struct GeometricRatio<ValueType: Comparable>: Equatable, Comparable {
 
     public let value: ValueType
     public let name: String?
@@ -22,12 +22,15 @@ public struct GeometricRatio<ValueType: Comparable>: Comparable {
         self.name = name
     }
 
+    public static func == (lhs: Self, rhs: Self) -> Bool {
+        return lhs.value == rhs.value
+    }
+
     public static func < (lhs: Self, rhs: Self) -> Bool {
         lhs.value < rhs.value
     }
 
 }
-
 
 // MARK: + Expressible by literal
 
