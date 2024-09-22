@@ -7,6 +7,8 @@
 
 import RealModule
 
+// MARK: - Geometric Ratio
+
 /// The Ratio type embodies the concept of a geometric ratio. It is intended to make UI work based on geometric relationships easier and more intuitive.
 /// The type provides many properties and methods that allow for convenient access to many ratios' irrational properties.
 /// Several common ratios are provided and made accessible as static computed variables. Try `Ratio.golden` to get started.
@@ -26,6 +28,8 @@ public struct GeometricRatio<ValueType: Comparable>: Comparable {
 
 }
 
+// MARK: + String convertible
+
 extension GeometricRatio: CustomStringConvertible {
     public var description: String {
         "\(name ?? "Unnamed") ratio"
@@ -37,6 +41,8 @@ extension GeometricRatio: CustomDebugStringConvertible {
         "1:\(value) [\(description)]"
     }
 }
+
+// MARK: + Expressible by literal
 
 extension GeometricRatio: ExpressibleByFloatLiteral where ValueType: ExpressibleByFloatLiteral {
 
@@ -56,6 +62,8 @@ extension GeometricRatio: ExpressibleByIntegerLiteral where ValueType: Expressib
 
 }
 
+// MARK: ValueType: Real
+
 public extension GeometricRatio where ValueType: Real {
 
     /// Returns the n-th application of the ratio onto itself.
@@ -65,6 +73,8 @@ public extension GeometricRatio where ValueType: Real {
 
 }
 
+// MARK: ValueType is CGFloat
+
 public extension GeometricRatio where ValueType == CGFloat {
 
     /// Returns the n-th application of the ratio onto itself.
@@ -73,6 +83,8 @@ public extension GeometricRatio where ValueType == CGFloat {
     }
 
 }
+
+// MARK: ValueType: FloatingPoint
 
 public extension GeometricRatio where ValueType: FloatingPoint {
 
@@ -114,6 +126,8 @@ public extension GeometricRatio where ValueType: FloatingPoint {
 
 }
 
+// MARK: ValueType is Double
+
 public extension GeometricRatio where ValueType == Double {
 
     /// The angle associated with the ratio.
@@ -149,6 +163,8 @@ public extension GeometricRatio where ValueType == Double {
     }
 
 }
+
+// MARK: - requiring SwiftUICore
 
 import SwiftUICore
 

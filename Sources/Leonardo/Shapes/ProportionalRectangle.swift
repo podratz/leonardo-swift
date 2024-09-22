@@ -80,17 +80,14 @@ extension ProportionalRectangle {
 }
 
 #Preview {
-    let ratio: Ratio = .silver
-    lazy var lineWidth = (1 / ratio.value) * 24
-    ZStack {
-        Color.gray
-        ForEach(0..<8) { index in
-            ProportionalRectangle(ratio: ratio, orientation: .portrait)
-                .strokeBorder(
-                    index.isMultiple(of: 2) ? .white : .gray,
-                    lineWidth: lineWidth * ratio.value)
-                .frame(length: Double(16 - index) * ratio.value * lineWidth)
-        }
-    }
+    ProportionalRectangle(ratio: .golden, orientation: .landscape)
+        .strokeBorder(.red, lineWidth: 10)
+        .frame(length: 200)
+    ProportionalRectangle(ratio: .golden, orientation: .landscape)
+        .strokeBorder(.red, lineWidth: 60)
+        .frame(length: 200)
+    ProportionalRectangle(ratio: .golden, orientation: .landscape)
+        .strokeBorder(.red, lineWidth: 170)
+        .frame(length: 200)
     .edgesIgnoringSafeArea(.all)
 }
