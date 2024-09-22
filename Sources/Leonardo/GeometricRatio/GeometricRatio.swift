@@ -28,6 +28,27 @@ public struct GeometricRatio<ValueType: Comparable>: Comparable {
 
 }
 
+
+// MARK: + Expressible by literal
+
+extension GeometricRatio: ExpressibleByIntegerLiteral where ValueType: ExpressibleByIntegerLiteral {
+
+    public init(integerLiteral value: ValueType.IntegerLiteralType) {
+        self.value = ValueType(integerLiteral: value)
+        self.name = nil
+    }
+
+}
+
+extension GeometricRatio: ExpressibleByFloatLiteral where ValueType: ExpressibleByFloatLiteral {
+
+    public init(floatLiteral value: ValueType.FloatLiteralType) {
+        self.value = ValueType(floatLiteral: value)
+        self.name = nil
+    }
+
+}
+
 // MARK: + String convertible
 
 extension GeometricRatio: CustomStringConvertible {
@@ -40,48 +61,6 @@ extension GeometricRatio: CustomDebugStringConvertible {
     public var debugDescription: String {
         "1:\(value) [\(description)]"
     }
-}
-
-// MARK: + Expressible by literal
-
-extension GeometricRatio: ExpressibleByFloatLiteral where ValueType: ExpressibleByFloatLiteral {
-
-    public init(floatLiteral value: ValueType.FloatLiteralType) {
-        self.value = ValueType(floatLiteral: value)
-        self.name = nil
-    }
-
-}
-
-extension GeometricRatio: ExpressibleByIntegerLiteral where ValueType: ExpressibleByIntegerLiteral {
-
-    public init(integerLiteral value: ValueType.IntegerLiteralType) {
-        self.value = ValueType(integerLiteral: value)
-        self.name = nil
-    }
-
-}
-
-// MARK: ValueType: Real
-
-public extension GeometricRatio where ValueType: Real {
-
-    /// Returns the n-th application of the ratio onto itself.
-    subscript(_ times: Int) -> ValueType {
-        .pow(value, times)
-    }
-
-}
-
-// MARK: ValueType is CGFloat
-
-public extension GeometricRatio where ValueType == CGFloat {
-
-    /// Returns the n-th application of the ratio onto itself.
-    subscript(_ times: Int) -> ValueType {
-        pow(value, CGFloat(times))
-    }
-
 }
 
 // MARK: ValueType: FloatingPoint
@@ -126,6 +105,17 @@ public extension GeometricRatio where ValueType: FloatingPoint {
 
 }
 
+// MARK: ValueType: Real
+
+public extension GeometricRatio where ValueType: Real {
+
+    /// Returns the n-th application of the ratio onto itself.
+    subscript(_ times: Int) -> ValueType {
+        .pow(value, times)
+    }
+
+}
+
 // MARK: ValueType is Double
 
 public extension GeometricRatio where ValueType == Double {
@@ -160,6 +150,17 @@ public extension GeometricRatio where ValueType == Double {
     /// Returns the n-th application of the ratio onto itself.
     subscript(hue index: Int) -> ValueType {
         self[phase: index].hue
+    }
+
+}
+
+// MARK: ValueType is CGFloat
+
+public extension GeometricRatio where ValueType == CGFloat {
+
+    /// Returns the n-th application of the ratio onto itself.
+    subscript(_ times: Int) -> ValueType {
+        pow(value, CGFloat(times))
     }
 
 }
