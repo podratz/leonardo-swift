@@ -18,7 +18,7 @@ func positiveRatioSubscript() {
 @Test("Ratio subscript for a negative number")
 func negativeRatioSubscript() {
     let ratio = Ratio.golden
-    #expect(ratio[-1] == 1 / ratio[1])
+    #expect(ratio[-1] == ratio[1].reciprocal)
 }
 
 @Test("Ratio subscript works for CGFloat")

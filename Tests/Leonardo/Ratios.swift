@@ -96,5 +96,5 @@ func ratiosAreEqualWithSameValueAlone() {
 @Test("the reciprocal of a ratio")
 func testReciprocal() {
     let ratio = Ratio.golden
-    #expect(1 / ratio.value == ratio.reciprocal)
+    #expect(ratio.reciprocal == 1 / ratio.value)
 }
