@@ -4,13 +4,13 @@ import Testing
 struct Constants {
 
     @Test("phi equals golden ratio")
-    func checkPhiIsGoldenRatio() {
-        #expect(Ratio.golden.value == .phi)
+    func testPhiEqualsGoldenRatio() {
+        #expect(.phi == Ratio.golden.value)
     }
 
     @Test("tau equals two pi")
-    func checkTauIsCorrect() {
-        #expect(2.0 * .pi == .tau)
+    func testTauEqualsTwoPi() {
+        #expect(.tau == 2.0 * .pi)
     }
 
 }
