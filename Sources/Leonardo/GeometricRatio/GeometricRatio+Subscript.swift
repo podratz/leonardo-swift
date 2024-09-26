@@ -39,7 +39,7 @@ public extension GeometricRatio where ValueType == CGFloat {
 
     /// Returns the n-th application of the ratio onto itself.
     subscript(_ times: Int) -> ValueType {
-        pow(value, CGFloat(times))
+        pow(quotient, CGFloat(times))
     }
 
 }
@@ -52,7 +52,7 @@ public extension GeometricRatio where ValueType: Real {
 
     /// Returns the n-th application of the ratio onto itself.
     subscript(_ times: Int) -> ValueType {
-        .pow(value, times)
+        .pow(quotient, times)
     }
 
 }

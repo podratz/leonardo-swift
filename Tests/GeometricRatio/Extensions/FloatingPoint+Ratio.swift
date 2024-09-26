@@ -35,7 +35,7 @@ extension GeometricRatioTests.Extensions {
         func testNeighborhoodOnFloatingPoint() {
             let ratio: Ratio = .golden
             let neighborhood = 1.neighborhood(ratio: ratio)
-            #expect(neighborhood == [ratio.reciprocal, 1, ratio.value])
+            #expect(neighborhood == [ratio.reciprocal, 1, ratio.quotient])
         }
 
     }

@@ -9,8 +9,8 @@ extension GeometricRatioTests {
         func testDoubleValueSubscripts(ratio: Ratio) {
             #expect(ratio[-1] == ratio[1].reciprocal)
             #expect(ratio[0] == 1)
-            #expect(ratio[1] == ratio.value)
-            #expect(ratio[2] == ratio.value * ratio.value)
+            #expect(ratio[1] == ratio.quotient)
+            #expect(ratio[2] == ratio.quotient * ratio.quotient)
         }
 
         @Test("GeometricRatio<CGFloat> subscripts")

@@ -18,13 +18,13 @@ extension GeometricRatioTests {
             ("1.325", .plastic  )]
               as [(String, Ratio)])
         func testConstantValue(rounded: String, ratio: Ratio) {
-            #expect(rounded == String(format:"%.3f", ratio.value))
+            #expect(rounded == String(format:"%.3f", ratio.quotient))
         }
 
         @Test("reciprocals")
         func testReciprocal() {
             let ratio = Ratio.golden
-            #expect(ratio.reciprocal == 1 / ratio.value)
+            #expect(ratio.reciprocal == 1 / ratio.quotient)
         }
 
         @Test("names", arguments: [
@@ -47,7 +47,7 @@ extension GeometricRatioTests {
         @Test("Metals value increasing")
         func testMetalsOrdering() {
             #expect(0 < Ratio.metals.reduce(1, { partialResult, ratio in
-                partialResult > ratio.value ? -1 : ratio.value
+                partialResult > ratio.quotient ? -1 : ratio.quotient
             }))
         }
 

@@ -14,7 +14,7 @@ public extension View {
         _ aspectRatio: GeometricRatio<some BinaryFloatingPoint>,
         contentMode: ContentMode = .fit
     ) -> some View {
-        self.aspectRatio(CGFloat(aspectRatio.value), contentMode: contentMode)
+        self.aspectRatio(CGFloat(aspectRatio.quotient), contentMode: contentMode)
     }
         
 }

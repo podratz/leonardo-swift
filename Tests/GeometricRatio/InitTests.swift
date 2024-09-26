@@ -4,17 +4,17 @@ import Testing
 extension GeometricRatioTests {
     struct Init {
 
-        @Test("init(_ value:)")
+        @Test("init(_ quotient:)")
         func testInitWithValue() {
 
             // just mandatory argument
             let halving = Ratio(0.5)
-            #expect(halving.value == 0.5)
+            #expect(halving.quotient == 0.5)
             #expect(halving.name == nil)
 
             // mandatory and explicit second argument
             let doubling = Ratio(2, name: "Doubling")
-            #expect(doubling.value == 2)
+            #expect(doubling.quotient == 2)
             #expect(doubling.name == "Doubling")
 
         }

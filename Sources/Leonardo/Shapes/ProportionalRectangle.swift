@@ -74,7 +74,7 @@ extension ProportionalRectangle {
 
     /// Creates a rectangle with the provided ratio used for
     public init(ratio: Ratio, orientation: Orientation = .landscape) {
-        self.init(aspectRatio: ratio.value, orientation: orientation)
+        self.init(aspectRatio: ratio.quotient, orientation: orientation)
     }
 
 }

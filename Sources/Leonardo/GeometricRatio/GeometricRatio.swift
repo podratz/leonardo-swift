@@ -15,20 +15,20 @@ import RealModule
 public struct GeometricRatio<ValueType: Comparable>: Equatable, Comparable {
     public typealias ValueType = ValueType
 
-    public let value: ValueType
+    public let quotient: ValueType
     public let name: String?
 
-    public init(_ value: ValueType, name: String? = nil) {
-        self.value = value
+    public init(_ quotient: ValueType, name: String? = nil) {
+        self.quotient = quotient
         self.name = name
     }
 
     public static func == (lhs: Self, rhs: Self) -> Bool {
-        return lhs.value == rhs.value
+        return lhs.quotient == rhs.quotient
     }
 
     public static func < (lhs: Self, rhs: Self) -> Bool {
-        lhs.value < rhs.value
+        lhs.quotient < rhs.quotient
     }
 
 }
@@ -37,20 +37,20 @@ public struct GeometricRatio<ValueType: Comparable>: Equatable, Comparable {
 
 public extension GeometricRatio where ValueType: FloatingPoint {
 
-    /// The reciprocal of the ratio. The invariant (1 / value == reciprocal) holds.
+    /// The reciprocal of the ratio. The invariant (1 / quotient == reciprocal) holds.
     var reciprocal: ValueType {
-        1 / value
+        1 / quotient
     }
 
     /// The ratio's proportion of some value.
     func proportion(of otherValue: ValueType) -> ValueType {
-        otherValue / value
+        otherValue / quotient
     }
 
     /// The weighted mean value between the first and second number provided.
     func mean(_ first: ValueType, _ second: ValueType) -> ValueType {
         let diff = second - first
-        let delta = diff / value
+        let delta = diff / quotient
         return first + delta
     }
 

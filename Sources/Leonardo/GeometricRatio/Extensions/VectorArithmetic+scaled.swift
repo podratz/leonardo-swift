@@ -11,7 +11,7 @@ extension VectorArithmetic {
 
     /// Returns a value with each component of this value multiplied by the given ratio.
     public func scaled(by ratio: GeometricRatio<Double>, times: Int = 1) -> Self {
-        let scalingFactor: Double = .pow(ratio.value, times)
+        let scalingFactor: Double = .pow(ratio.quotient, times)
         return scaled(by: scalingFactor)
     }
 

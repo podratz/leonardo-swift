@@ -5,7 +5,7 @@ struct Constants {
 
     @Test("phi equals golden ratio")
     func testPhiEqualsGoldenRatio() {
-        #expect(.phi == Ratio.golden.value)
+        #expect(.phi == Ratio.golden.quotient)
     }
 
     @Test("tau equals two pi")
