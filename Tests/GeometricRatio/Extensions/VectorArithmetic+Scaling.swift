@@ -3,14 +3,16 @@ import Testing
 import CoreGraphics
 
 extension GeometricRatioTests.Extensions {
-    @Suite("Vector Arithmetic + Ratio")
+
+    @Suite("Vector Arithmetic + Scaling")
     struct VectorArithmeticExtensions {
 
-        @Test("Scale CGFloat")
-        func checkScalingOfCGFloat() {
+        @Test("CGFloat scaled by ratio")
+        func testCGFloatScaledByRatio() {
             #expect(Int(CGFloat(50).scaled(by: .golden)) == 80)
             #expect(Int(CGFloat(50).scaled(by: .golden, times: 2)) == 130)
         }
 
     }
+
 }

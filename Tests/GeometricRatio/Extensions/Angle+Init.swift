@@ -2,13 +2,15 @@ import Testing
 @testable import Leonardo
 
 extension GeometricRatioTests.Extensions {
-    @Suite("Angle + Ratio")
+
+    @Suite("Angle + Init")
     struct AngleExtensions {
 
-        @Test("Initialize Angles from ratios", arguments: Ratio.metals)
+        @Test("Angle(ratio:)", arguments: Ratio.metals)
         func testAngleFromRatio(ratio: Ratio) {
             #expect(Angle(ratio) == ratio.angle)
         }
 
     }
+
 }
