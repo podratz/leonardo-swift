@@ -1,7 +1,7 @@
 import Testing
 @testable import Leonardo
 
-extension RatioTests {
+extension GeometricRatioTests {
     struct Angles {
 
         @Test("golden angle approximation")

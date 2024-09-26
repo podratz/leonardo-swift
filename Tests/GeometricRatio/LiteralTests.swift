@@ -2,7 +2,7 @@ import CoreGraphics
 import Testing
 @testable import Leonardo
 
-extension RatioTests {
+extension GeometricRatioTests {
     struct Literals {
 
         @Test("Expressible by integer literal")

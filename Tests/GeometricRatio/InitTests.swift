@@ -1,7 +1,7 @@
 import Testing
 @testable import Leonardo
 
-extension RatioTests {
+extension GeometricRatioTests {
     struct Init {
 
         @Test("with numerator and denominator") func testWithNumeratorAndDenominator() throws {

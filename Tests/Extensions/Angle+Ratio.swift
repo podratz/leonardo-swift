@@ -1,7 +1,7 @@
 import Testing
 @testable import Leonardo
 
-extension RatioExtensionsTests {
+extension GeometricRatioTests.Extensions {
     @Suite("Angle + Ratio")
     struct AngleExtensions {
 

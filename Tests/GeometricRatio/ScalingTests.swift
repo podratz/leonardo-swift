@@ -2,7 +2,7 @@ import Testing
 @testable import Leonardo
 import CoreGraphics
 
-extension RatioTests {
+extension GeometricRatioTests {
     struct Scaling {
 
         @Test("Ratio upscaled() works")

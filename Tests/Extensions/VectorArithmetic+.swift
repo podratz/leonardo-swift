@@ -2,7 +2,7 @@ import Testing
 @testable import Leonardo
 import CoreGraphics
 
-extension RatioExtensionsTests {
+extension GeometricRatioTests.Extensions {
     @Suite("Vector Arithmetic + Ratio")
     struct VectorArithmeticExtensions {
 

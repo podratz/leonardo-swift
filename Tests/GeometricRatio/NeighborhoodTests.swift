@@ -2,7 +2,7 @@ import CoreGraphics
 import Testing
 @testable import Leonardo
 
-extension RatioTests {
+extension GeometricRatioTests {
     struct Neighborhood {
         
         @Test("neighborhood around ratio")

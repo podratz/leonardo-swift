@@ -2,7 +2,7 @@ import Testing
 @testable import Leonardo
 import CoreGraphics
 
-extension RatioTests {
+extension GeometricRatioTests {
     struct Subscripts {
 
         @Test("subscript with positive integer")
