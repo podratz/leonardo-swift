@@ -14,4 +14,9 @@ public extension Angle {
         .init(hue: hue, saturation: 1, brightness: 1)
     }
 
+    /// The hue corresponding to the angle normalized to the interval [0, 1].
+    var hue: Double {
+        phase / .tau
+    }
+
 }
