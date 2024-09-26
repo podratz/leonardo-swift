@@ -46,9 +46,9 @@ extension GeometricRatioTests {
 
         @Test("Metals value increasing")
         func testMetalsOrdering() {
-            #expect(0 < Ratio.metals.reduce(1, { partialResult, ratio in
+            #expect(0 < Ratio.metals.reduce(1) { partialResult, ratio in
                 partialResult > ratio.quotient ? -1 : ratio.quotient
-            }))
+            })
         }
 
     }
