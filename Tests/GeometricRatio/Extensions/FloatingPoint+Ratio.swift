@@ -21,13 +21,13 @@ extension GeometricRatioTests.Extensions {
 
         @Test("Number upscales by ratio")
         func checkIfNumberUpscalesCorrectly() {
-            let scaled = 50.upscaled(by: .golden)
+            let scaled = 50.scaledUp(by: .golden)
             #expect(Int(scaled) == 80)
         }
 
         @Test("Number downscales by ratio")
         func checkIfNumberDownscalesCorrectly() {
-            let scaled = 50.downscaled(by: .golden)
+            let scaled = 50.scaledDown(by: .golden)
             #expect(Int(scaled) == 30)
         }
 

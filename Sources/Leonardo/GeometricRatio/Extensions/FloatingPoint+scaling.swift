@@ -8,7 +8,7 @@
 public extension FloatingPoint {
 
     /// Returns the value formed by applying the provided ratio n times.
-    func upscaled(by ratio: GeometricRatio<Self>, times: Int = 1) -> Self {
+    func scaledUp(by ratio: GeometricRatio<Self>, times: Int = 1) -> Self {
         assert(times >= 0, "\(self) can only be upscaled a non-negative number of times")
         var result = self
         for _ in 0 ..< times {
@@ -18,7 +18,7 @@ public extension FloatingPoint {
     }
 
     /// Returns the value formed by applying the provided ratio n times.
-    func downscaled(by ratio: GeometricRatio<Self>, times: Int = 1) -> Self {
+    func scaledDown(by ratio: GeometricRatio<Self>, times: Int = 1) -> Self {
         assert(times >= 0, "\(self) can only be downscaled a non-negative number of times")
         var result = self
         for _ in 0 ..< times {
@@ -34,13 +34,13 @@ import CoreFoundation
 public extension CGFloat {
 
     /// Returns the value formed by applying the provided ratio n times.
-    func upscaled(by ratio: GeometricRatio<Self>, times: Int = 1) -> Self {
+    func scaledUp(by ratio: GeometricRatio<Self>, times: Int = 1) -> Self {
         assert(times >= 0, "\(self) can only be upscaled a non-negative number of times")
         return self * pow(ratio.value, CGFloat(times))
     }
 
     /// Returns the value formed by applying the provided ratio n times.
-    func downscaled(by ratio: GeometricRatio<Self>, times: Int = 1) -> Self {
+    func scaledDown(by ratio: GeometricRatio<Self>, times: Int = 1) -> Self {
         assert(times >= 0, "\(self) can only be downscaled a non-negative number of times")
         return self * pow(ratio.value, -CGFloat(times))
     }
