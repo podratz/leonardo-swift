@@ -5,10 +5,10 @@
 //  Created by Nick on 27.09.24.
 //
 
-enum Orientation: CaseIterable, CustomStringConvertible {
+public enum Orientation: CaseIterable, CustomStringConvertible {
     case automatic, horizontal, vertical
 
-    var description: String {
+    public var description: String {
         switch self {
         case .automatic: "Automatic"
         case .horizontal: "Horizontal"
