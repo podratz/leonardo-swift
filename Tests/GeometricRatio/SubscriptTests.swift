@@ -5,25 +5,16 @@ import CoreGraphics
 extension GeometricRatioTests {
     struct Subscripts {
 
-        @Test("subscript with positive integer")
-        func checkSubscriptWorks() {
-            #expect(Ratio.golden[2] == Ratio.golden.applied(times: 2))
-        }
-
-        @Test("Ratio subscript for a positive number")
-        func positiveRatioSubscript() {
-            let ratio = Ratio.golden
+        @Test("Ratio subscripts", arguments: [Ratio.golden])
+        func testDoubleValueSubscripts(ratio: Ratio) {
+            #expect(ratio[-1] == ratio[1].reciprocal)
+            #expect(ratio[0] == 1)
+            #expect(ratio[1] == ratio.value)
             #expect(ratio[2] == ratio.value * ratio.value)
         }
 
-        @Test("Ratio subscript for a negative number")
-        func negativeRatioSubscript() {
-            let ratio = Ratio.golden
-            #expect(ratio[-1] == ratio[1].reciprocal)
-        }
-
-        @Test("Ratio subscript works for CGFloat")
-        func cgFloatRatioSubscript() {
+        @Test("GeometricRatio<CGFloat> subscripts")
+        func testCGFloatValueSubscripts() {
             let cgRatio = GeometricRatio<CGFloat>.golden
             let doubleRatio = Ratio.golden
             #expect(Double(cgRatio[1]) == doubleRatio[1])
