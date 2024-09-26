@@ -5,16 +5,14 @@ import Testing
 extension GeometricRatioTests {
     struct Literals {
 
-        @Test("Expressible by integer literal")
-        func intLiteral() {
-            let ratio: Ratio = 3
-            #expect(ratio.value == 3.0)
+        @Test("int literal")
+        func testIntLiteral() {
+            #expect(3 == Ratio(3))
         }
 
-        @Test("Expressible by float literal")
-        func doubleLiteral() {
-            let ratio: Ratio = 1.5
-            #expect(ratio.value == 1.5)
+        @Test("float literal")
+        func testFloatLiteral() {
+            #expect(1.5 == Ratio(1.5))
         }
 
     }
