@@ -27,19 +27,5 @@ extension GeometricRatioTests {
             #expect(CGFloat(10).scaledDown(by: cgRatio).isApproximatelyEqual(to: 6.18, absoluteTolerance: 0.001))
         }
 
-        @Test("applied works with all arguments")
-        func testApplied() {
-            #expect(Ratio.golden.applied() == Ratio.golden.value)
-            #expect(Ratio.golden.applied(to: 50) == 50 * Ratio.golden.value)
-            #expect(Ratio.golden.applied(times: 2) == .pow(Ratio.golden.value, 2))
-            #expect(Ratio.golden.applied(to: 50, times: 2) == 50 * .pow(Ratio.golden.value, 2))
-
-            // Edge cases
-            #expect(Ratio.golden.applied(to: -50, times: 2) == -50 * .pow(Ratio.golden.value, 2))
-            #expect(Ratio.golden.applied(to: 0) == 0)
-            #expect(Ratio.golden.applied(times: 0) == 1)
-            #expect(Ratio.golden.applied(to: 0, times: 0) == 0)
-        }
-
     }
 }

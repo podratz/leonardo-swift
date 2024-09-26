@@ -54,14 +54,4 @@ public extension GeometricRatio where ValueType: FloatingPoint {
         return first + delta
     }
 
-    /// The number which results from applying the ratio to another number.
-    func applied(to number: ValueType = 1, times: Int = 1) -> ValueType {
-        assert(times >= 0, "\(self) can only be applied a non-negative number of times")
-        var result = number
-        for _ in 0 ..< times {
-            result *= value
-        }
-        return result
-    }
-
 }

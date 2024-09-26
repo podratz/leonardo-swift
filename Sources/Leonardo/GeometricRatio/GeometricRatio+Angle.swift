@@ -17,7 +17,7 @@ public extension GeometricRatio where ValueType == Double {
     /// The sequence of angles derived from iterative application of this ratio.
     var angles: some Sequence<Angle> {
         (0...).lazy.map { index in
-                .init(radians: applied(to: angle.radians, times: index))
+            .init(radians: self[index] * angle.radians)
         }
     }
 
