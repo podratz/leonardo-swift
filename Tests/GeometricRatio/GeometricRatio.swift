@@ -1,10 +1,3 @@
-//
-//  GeometricRatio.swift
-//  Leonardo
-//
-//  Created by Nick on 20.09.24.
-//
-
 import CoreGraphics
 import Testing
 @testable import Leonardo
