@@ -42,16 +42,11 @@ public extension GeometricRatio where ValueType: FloatingPoint {
         1 / quotient
     }
 
-    /// The ratio's proportion of some value.
-    func proportion(of otherValue: ValueType) -> ValueType {
-        otherValue / quotient
-    }
-
-    /// The weighted mean value between the first and second number provided.
-    func mean(_ first: ValueType, _ second: ValueType) -> ValueType {
-        let diff = second - first
-        let delta = diff / quotient
-        return first + delta
+    /// The proportion between one value (default 0) and a second.
+    func proportion(_ from: ValueType = 0, to: ValueType) -> ValueType {
+        let length = to - from
+        let part = length / quotient
+        return from + part
     }
 
 }
