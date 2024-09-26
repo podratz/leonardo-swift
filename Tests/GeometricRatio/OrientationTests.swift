@@ -19,5 +19,14 @@ extension GeometricRatioTests {
             #expect("\(orientation)" == expectedDescription)
         }
 
+        @Test(arguments: [
+            (.automatic, 0),
+            (.landscape, 1),
+            (.portrait, -1)
+        ] as [(Orientation, Int)])
+        func testSign(orientation: Orientation, sign: Int) {
+            #expect(orientation.sign == sign)
+        }
+
     }
 }
