@@ -2,7 +2,6 @@ import Testing
 @testable import Leonardo
 
 extension RatioTests {
-
     struct Initialization {
 
         @Test("with numerator and denominator") func testWithNumeratorAndDenominator() throws {
@@ -16,5 +15,4 @@ extension RatioTests {
         }
 
     }
-
 }

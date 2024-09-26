@@ -2,7 +2,6 @@ import Testing
 @testable import Leonardo
 
 extension RatioTests {
-
     struct Constants {
 
         @Test("round to 3 digits", arguments: [
@@ -106,5 +105,4 @@ extension RatioTests {
         }
 
     }
-    
 }
