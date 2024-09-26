@@ -16,7 +16,7 @@ public enum Orientation: CaseIterable, CustomStringConvertible {
         }
     }
 
-    var sign: Int {
+    public var sign: Int {
         switch self {
         case .automatic: 0
         case .landscape: 1

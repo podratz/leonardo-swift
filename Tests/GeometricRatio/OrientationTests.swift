@@ -5,12 +5,12 @@ import Testing
 extension GeometricRatioTests {
     struct Orientations {
 
-        @Test(arguments: [.automatic, .landscape, .portrait] as [Orientation])
-        func testOrientationsContains(orientation: Orientation) {
+        @Test("allCases", arguments: [.automatic, .landscape, .portrait] as [Orientation])
+        func testAllCasesContains(orientation: Orientation) {
             #expect(Orientation.allCases.contains(orientation) )
         }
 
-        @Test(arguments: [
+        @Test("description", arguments: [
             (.automatic, "Automatic"),
             (.landscape, "Landscape"),
             (.portrait, "Portrait")
@@ -19,7 +19,7 @@ extension GeometricRatioTests {
             #expect("\(orientation)" == expectedDescription)
         }
 
-        @Test(arguments: [
+        @Test("sign", arguments: [
             (.automatic, 0),
             (.landscape, 1),
             (.portrait, -1)
