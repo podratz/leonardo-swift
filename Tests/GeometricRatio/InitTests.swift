@@ -4,14 +4,17 @@ import Testing
 extension GeometricRatioTests {
     struct Init {
 
-        @Test("with numerator and denominator") func testWithNumeratorAndDenominator() throws {
-            #expect(try Ratio(numerator: 10, denominator: 20).value == Ratio(0.5).value)
-        }
+        @Test("init(numerator:denominator:)")
+        func testInitWithNumeratorAndDenominator() throws {
 
-        @Test("with invalid denominator") func testWithInvalidDenominator() {
-            #expect(throws: GeometricRatioError.invalidDenominator, "Division by zero") {
+            // invalid denominator argument
+            #expect(throws: GeometricRatioError.invalidDenominator) {
                 try Ratio(numerator: 10, denominator: 0)
             }
+
+            // valid arguments
+            #expect(try Ratio(numerator: 10, denominator: 20) == Ratio(0.5))
+
         }
 
     }
