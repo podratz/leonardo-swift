@@ -2,7 +2,7 @@ import Testing
 @testable import Leonardo
 
 extension RatioTests {
-    struct Initialization {
+    struct Init {
 
         @Test("with numerator and denominator") func testWithNumeratorAndDenominator() throws {
             #expect(try Ratio(numerator: 10, denominator: 20).value == Ratio(0.5).value)
