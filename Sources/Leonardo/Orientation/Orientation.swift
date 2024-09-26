@@ -6,13 +6,13 @@
 //
 
 public enum Orientation: CaseIterable, CustomStringConvertible {
-    case automatic, horizontal, vertical
+    case automatic, landscape, portrait
 
     public var description: String {
         switch self {
         case .automatic: "Automatic"
-        case .horizontal: "Horizontal"
-        case .vertical: "Vertical"
+        case .landscape: "Landscape"
+        case .portrait: "Portrait"
         }
     }
 
