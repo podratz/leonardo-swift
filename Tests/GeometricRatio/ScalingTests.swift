@@ -26,6 +26,6 @@ extension GeometricRatioTests {
             let cgRatio = GeometricRatio<CGFloat>.golden
             #expect(CGFloat(10).scaledDown(by: cgRatio).isApproximatelyEqual(to: 6.18, absoluteTolerance: 0.001))
         }
-
+        
     }
 }
