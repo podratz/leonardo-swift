@@ -71,11 +71,4 @@ public extension GeometricRatio where ValueType: FloatingPoint {
         return result
     }
 
-    /// A sequence of values created by iteratively applying this ratio.
-    var values: some Sequence<ValueType> {
-        (0...).lazy.map { index in
-            applied(to: value, times: index)
-        }
-    }
-
 }
