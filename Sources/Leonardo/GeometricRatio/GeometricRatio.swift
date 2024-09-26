@@ -44,9 +44,7 @@ public extension GeometricRatio where ValueType: FloatingPoint {
 
     /// The proportion between one value (default 0) and a second.
     func proportion(_ from: ValueType = 0, to: ValueType) -> ValueType {
-        let length = to - from
-        let part = length / quotient
-        return from + part
+         from + (to - from) / quotient
     }
 
 }
