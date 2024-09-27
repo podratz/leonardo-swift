@@ -31,5 +31,18 @@ extension GeometricRatioTests {
             #expect(orientation.sign == sign)
         }
 
+        @Test("id", arguments: [
+            (.landscape, 1),
+            (.portrait, -1)
+        ] as [(Orientation, Int)])
+        func testSign(orientation: Orientation, id: Int) {
+            #expect(orientation.id == id)
+        }
+
+        @Test("equality", arguments: [.landscape, .portrait] as [Orientation])
+        func testEquality(orientation: Orientation) {
+            #expect(Orientation.landscape != Orientation.portrait)
+        }
+
     }
 }
