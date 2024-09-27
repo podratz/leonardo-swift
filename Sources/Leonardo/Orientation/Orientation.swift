@@ -18,10 +18,7 @@ public enum Orientation: Int, CaseIterable, CustomStringConvertible {
     }
 
     public var sign: Int {
-        switch self {
-        case .portrait: -1
-        case .landscape: 1
-        }
+        rawValue
     }
 
 }
