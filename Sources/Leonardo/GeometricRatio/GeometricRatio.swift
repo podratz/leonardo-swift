@@ -13,11 +13,9 @@ import RealModule
 /// The type provides many properties and methods that allow for convenient access to many ratios' irrational properties.
 /// Several common ratios are provided and made accessible as static computed variables. Try `Ratio.gold` to get started.
 public struct GeometricRatio<Value> {
-    public typealias Value = Value
-    
     public let numerator: Value
     public let denominator: Value
-
+    
     public let name: String?
 
     public init(of numerator: Value, to denominator: Value, name: String? = nil) {
