@@ -10,8 +10,7 @@ public extension Angle {
     /// The phase of the angle in the range [0, tau).
     var phase: Double {
         let remainder = radians.truncatingRemainder(dividingBy: .tau)
-        let adujustedRemainder = remainder < 0 ? remainder + .tau : remainder
-        return adujustedRemainder
+        return remainder < 0 ? remainder + .tau : remainder
     }
 
 }
