@@ -3,7 +3,7 @@ import Testing
 
 @Test func testSequence() {
     let expected = [Ratio.gold[1], Ratio.gold[2], Ratio.gold[3]]
-    #expect(expected == Ratio.gold.sequence.prefix(3).map(\.quotient))
+    #expect(expected == Ratio.gold.prefix(3).map(\.quotient))
 }
 
 @Test func testTail() {

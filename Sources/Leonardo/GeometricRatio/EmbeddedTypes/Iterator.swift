@@ -14,11 +14,16 @@ public extension GeometricRatio {
         let end: Int?
         var times = 0
         
+        init(_ ratio: GeometricRatio) {
+            self.ratio = ratio
+            self.end = nil
+        }
+
         init(_ sequence: FiniteSequence) {
             self.ratio = sequence.ratio
             self.end = sequence.length
         }
-
+        
         init(_ sequence: InfiniteSequence) {
             self.ratio = sequence.ratio
             self.end = nil
