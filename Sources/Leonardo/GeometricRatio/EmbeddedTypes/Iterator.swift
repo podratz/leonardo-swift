@@ -19,16 +19,11 @@ public extension GeometricRatio {
             self.end = nil
         }
 
-        init(_ sequence: FiniteSequence) {
+        init(_ sequence: GeometricRatio.Sequence) {
             self.ratio = sequence.ratio
             self.end = sequence.length
         }
         
-        init(_ sequence: InfiniteSequence) {
-            self.ratio = sequence.ratio
-            self.end = nil
-        }
-
         mutating public func next() -> GeometricRatio<Value>? {
             if let end, times >= end { return nil }
             times += 1

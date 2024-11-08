@@ -9,7 +9,7 @@ import RealModule
 
 extension GeometricRatio where Value: Real {
     
-    var tail: some Sequence<Self> {
+    var tail: DropFirstSequence<Self> {
         self.dropFirst()
     }
     

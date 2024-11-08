@@ -9,12 +9,12 @@ import RealModule
 
 public extension GeometricRatio {
     
-    struct FiniteSequence: Sequence where Value: Real {
+    struct Sequence: Swift.Sequence where Value: Real {
         let ratio: GeometricRatio<Value>
         let length: Int
         
-        public func makeIterator() -> GeometricRatio<Value>.Iterator {
-            return GeometricRatio.Iterator(self)
+        public func makeIterator() -> Iterator {
+            return Iterator(self)
         }
     }
     
