@@ -8,19 +8,19 @@
 public extension FloatingPoint {
 
     /// Creates a geometric progression that follows the provided ratio.
-    func sequence(upBy ratio: GeometricRatio<Self>) -> some Sequence<Self> {
+    func up(by ratio: GeometricRatio<Self>) -> some Sequence<Self> {
         Swift.sequence(first: self) { $0 * ratio.quotient }
     }
 
     /// Creates a geometric progression that follows the provided ratio.
-    func sequence(downBy ratio: GeometricRatio<Self>) -> some Sequence<Self> {
+    func down(by ratio: GeometricRatio<Self>) -> some Sequence<Self> {
         Swift.sequence(first: self) { $0 / ratio.quotient }
     }
 
     /// Computes the geometric neighborhood for the given value with the ratio such that the given value is the center element.
     func neighborhood(ratio: GeometricRatio<Self>, radius: Int = 1) -> Array<Self> {
-        let prefix = Self(1).sequence(downBy: ratio).prefix(radius + 1).reversed()
-        let suffix = Self(1).sequence(upBy: ratio).dropFirst().prefix(radius)
+        let prefix = Self(1).down(by: ratio).prefix(radius + 1).reversed()
+        let suffix = Self(1).up(by: ratio).dropFirst().prefix(radius)
         return prefix + suffix
     }
 

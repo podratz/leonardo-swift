@@ -8,14 +8,14 @@ extension GeometricRatioTests.Extensions {
 
         @Test("Increases by ratio")
         func checkIfGoldenSequenceIncreasesCorrectly() {
-            let sequence = 50.sequence(upBy: .gold)
+            let sequence = 50.up(by: .gold)
             let expected = sequence.prefix(3).map(Int.init)
             #expect(expected == [50, 80, 130])
         }
 
         @Test("Decreases by ratio")
         func checkIfGoldenSequenceDecreasesCorrectly() {
-            let sequence = 50.sequence(downBy: .gold)
+            let sequence = 50.down(by: .gold)
             let expected = sequence.prefix(3).map(Int.init)
             #expect(expected == [50, 30, 19])
         }
