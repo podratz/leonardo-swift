@@ -7,12 +7,12 @@
 
 extension GeometricRatio where Value: FloatingPoint {
     
-    func sequence(length: Int) -> GeometricSequence<Value> {
-        GeometricSequence(ratio: self, length: length)
+    func sequence(length: Int) -> FiniteSequence {
+        FiniteSequence(ratio: self, length: length)
     }
     
-    var infiniteSequence: GeometricSequence<Value> {
-        GeometricSequence(ratio: self, length: .max)
+    var infiniteSequence: Self.InfiniteSequence {
+        InfiniteSequence(ratio: self)
     }
 
 }
