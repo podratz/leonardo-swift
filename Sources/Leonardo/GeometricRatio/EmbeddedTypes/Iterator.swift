@@ -1,12 +1,13 @@
 //
-//  GeometricRatio+Iterator.swift
+//  Iterator.swift
 //  leonardo-swift
 //
 //  Created by Nick Podratz on 08.11.24.
 //
 
-extension GeometricRatio {
-    public struct Iterator: IteratorProtocol where Value: FloatingPoint {
+public extension GeometricRatio {
+    
+    struct Iterator: IteratorProtocol where Value: FloatingPoint {
         let ratio: GeometricRatio<Value>
         let end: Int?
         var times = 0
@@ -34,4 +35,5 @@ extension GeometricRatio {
             return GeometricRatio(nextQuotient)
         }
     }
+    
 }
