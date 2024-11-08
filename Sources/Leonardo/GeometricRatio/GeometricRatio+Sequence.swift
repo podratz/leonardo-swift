@@ -11,4 +11,8 @@ extension GeometricRatio where Value: FloatingPoint {
         GeometricSequence(ratio: self, length: length)
     }
     
+    var infiniteSequence: GeometricSequence<Value> {
+        GeometricSequence(ratio: self, length: .max)
+    }
+
 }
