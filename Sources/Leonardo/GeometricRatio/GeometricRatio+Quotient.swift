@@ -5,6 +5,8 @@
 //  Created by Nick Podratz on 08.11.24.
 //
 
+// MARK: - GeometricRatio + Quotient
+
 public extension GeometricRatio {
     
     /// The quotient of the ratio. The invariant (quotient == numerator / denominator) holds.
@@ -23,11 +25,23 @@ public extension GeometricRatio {
         self.name = name
     }
 
-    static func == (lhs: Self, rhs: Self) -> Bool {
+}
+
+// MARK: - GeometricRatio: Equatable
+
+extension GeometricRatio: Equatable {
+    
+    public static func == (lhs: Self, rhs: Self) -> Bool {
         return lhs.quotient == rhs.quotient
     }
+    
+}
 
-    static func < (lhs: Self, rhs: Self) -> Bool {
+// MARK: - GeometricRatio: Comparable
+
+extension GeometricRatio: Comparable {
+    
+    public static func < (lhs: Self, rhs: Self) -> Bool {
         lhs.quotient < rhs.quotient
     }
 
