@@ -15,14 +15,14 @@ import RealModule
 public struct GeometricRatio<Value: FloatingPoint>: Equatable, Comparable {
     public typealias Value = Value
     
+    public var quotient: Value {
+        numerator / denominator
+    }
+
     public let numerator: Value
     public let denominator: Value
 
     public let name: String?
-    
-    public var quotient: Value {
-        numerator / denominator
-    }
 
     public init(_ quotient: Value, name: String? = nil) {
         self.numerator = quotient
@@ -42,7 +42,7 @@ public struct GeometricRatio<Value: FloatingPoint>: Equatable, Comparable {
 
 // MARK: ValueType: FloatingPoint
 
-public extension GeometricRatio where Value: FloatingPoint {
+public extension GeometricRatio {
 
     /// The reciprocal of the ratio. The invariant (1 / quotient == reciprocal) holds.
     var reciprocal: Value {

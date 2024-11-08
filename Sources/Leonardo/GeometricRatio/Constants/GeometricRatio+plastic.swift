@@ -7,7 +7,7 @@
 
 import RealModule
 
-public extension GeometricRatio where Value: FloatingPoint {
+public extension GeometricRatio {
 
     nonisolated static var plastic: Self {
         var x: Value = 1

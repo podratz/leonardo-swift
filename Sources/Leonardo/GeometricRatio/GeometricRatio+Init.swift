@@ -5,7 +5,7 @@
 //  Created by Nick on 26.09.24.
 //
 
-public extension GeometricRatio where Value: FloatingPoint {
+public extension GeometricRatio {
     /// Initializes a `GeometricRatio` with a numerator and a denominator.
     ///
     /// This initializer computes the ratio by dividing the given numerator by the denominator.
