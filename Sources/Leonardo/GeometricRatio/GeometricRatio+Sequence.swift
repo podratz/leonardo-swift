@@ -9,6 +9,18 @@ import RealModule
 
 extension GeometricRatio where Value: Real {
     
+    func infiniteSequence<Element>(mapTo keyPath: KeyPath<Self, Element>) -> [Element] {
+        infiniteSequence.map { element in
+            element[keyPath: keyPath]
+        }
+    }
+    
+    func sequence<Element>(length: Int, mapTo keyPath: KeyPath<Self, Element>) -> [Element] {
+        sequence(length: length).map { element in
+            element[keyPath: keyPath]
+        }
+    }
+    
     func tail(_ n: Int = 1, length: Int? = nil) -> AnySequence<Self> {
         if let length {
             AnySequence(sequence(length: n + length).dropFirst(n))
