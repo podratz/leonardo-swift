@@ -23,12 +23,10 @@ extension GeometricRatioTests {
         func testInitWithNumeratorAndDenominator() throws {
 
             // invalid denominator argument
-            #expect(throws: GeometricRatioError.invalidDenominator) {
-                try Ratio(of: 10, to: 0)
-            }
+            #expect(Ratio(of: 10, to: 0) == Ratio(.infinity))
 
             // valid arguments
-            #expect(try Ratio(of: 10, to: 20) == Ratio(0.5))
+            #expect(Ratio(of: 10, to: 20) == Ratio(0.5))
 
         }
 
