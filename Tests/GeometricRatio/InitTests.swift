@@ -19,7 +19,7 @@ extension GeometricRatioTests {
 
         }
 
-        @Test("init(numerator:denominator:)")
+        @Test("init(of:to:)")
         func testInitWithNumeratorAndDenominator() throws {
 
             // invalid denominator argument
