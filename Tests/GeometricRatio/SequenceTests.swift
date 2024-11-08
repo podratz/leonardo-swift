@@ -10,3 +10,8 @@ import Testing
     let expected = [Ratio.gold[1], Ratio.gold[2], Ratio.gold[3]]
     #expect(expected == Ratio.gold.infiniteSequence.prefix(3).map(\.quotient))
 }
+
+@Test func testFiniteTailSequence() {
+    let expected = [Ratio.gold[3], Ratio.gold[4], Ratio.gold[5]]
+    #expect(expected == Ratio.gold.tail(2, length: 3).map(\.quotient))
+}

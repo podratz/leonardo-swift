@@ -5,9 +5,11 @@
 //  Created by Nick Podratz on 08.11.24.
 //
 
+import RealModule
+
 public extension GeometricRatio {
     
-    struct Iterator: IteratorProtocol where Value: FloatingPoint {
+    struct Iterator: IteratorProtocol where Value: Real {
         let ratio: GeometricRatio<Value>
         let end: Int?
         var times = 0
@@ -24,15 +26,8 @@ public extension GeometricRatio {
 
         mutating public func next() -> GeometricRatio<Value>? {
             if let end, times >= end { return nil }
-
-            var nextQuotient = ratio.quotient
-            
-            for _ in 0..<times {
-                nextQuotient *= ratio.quotient
-            }
-            
             times += 1
-            return GeometricRatio(nextQuotient)
+            return GeometricRatio(Value.pow(ratio.quotient, times))
         }
     }
     
