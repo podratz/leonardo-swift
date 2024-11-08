@@ -8,7 +8,7 @@ extension GeometricRatioTests.Extensions {
 
         @Test("Angle(ratio:)", arguments: Ratio.metals)
         func testAngleFromRatio(ratio: Ratio) {
-            #expect(Angle(ratio) == ratio.angle)
+            #expect(Angle(ratio: ratio) == ratio.angle)
         }
 
     }

@@ -11,14 +11,12 @@ public extension GeometricRatio where Value == Double {
 
     /// The angle associated with the ratio.
     var angle: Angle {
-        .init(radians: .tau * (1 - 1 / quotient))
+        .init(ratio: self)
     }
 
     /// The sequence of angles derived from iterative application of this ratio.
     var angles: some Sequence<Angle> {
-        (0...).lazy.map { index in
-            .init(radians: self[index] * angle.radians)
-        }
+        tail.map(\.angle)
     }
 
     /// The phase value derived from interpreting the ratio as an angle.

@@ -5,11 +5,13 @@
 //  Created by Nick on 17.09.24.
 //
 
+import SwiftUICore
+
 public extension Angle {
 
     /// Initializes an `Angle` from the provided ratio.
-    init(_ ratio: GeometricRatio<Double>) {
-        self = ratio.angle
+    @inlinable init(ratio: GeometricRatio<Double>) {
+        self.init(radians: .tau * (1 - 1 / ratio.quotient))
     }
 
 }
