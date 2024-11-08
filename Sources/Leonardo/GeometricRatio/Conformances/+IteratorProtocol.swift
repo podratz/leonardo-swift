@@ -6,6 +6,7 @@
 //
 
 extension GeometricRatio: IteratorProtocol where Value: FloatingPoint {
+    
     init(_ ratio: Self) {
         self = ratio
     }
@@ -13,4 +14,5 @@ extension GeometricRatio: IteratorProtocol where Value: FloatingPoint {
     public func next() -> Self? {
         Self(quotient * quotient)
     }
+    
 }
