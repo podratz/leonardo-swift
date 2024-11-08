@@ -5,7 +5,7 @@
 //  Created by Nick Podratz on 08.11.24.
 //
 
-public extension GeometricRatio {
+public extension GeometricRatio where Value: FloatingPoint {
 
     /// The proportion between one value (default 0) and a second.
     func proportion(_ from: Value = 0, to: Value) -> Value {

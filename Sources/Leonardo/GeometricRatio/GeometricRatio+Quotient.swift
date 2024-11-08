@@ -7,7 +7,7 @@
 
 // MARK: - GeometricRatio + Quotient
 
-public extension GeometricRatio {
+public extension GeometricRatio where Value: FloatingPoint {
     
     /// The quotient of the ratio. The invariant (quotient == numerator / denominator) holds.
     var quotient: Value {
@@ -16,7 +16,7 @@ public extension GeometricRatio {
 
     /// The reciprocal of the ratio. The invariant (1 / quotient == reciprocal) holds.
     var reciprocal: Value {
-        1 / quotient
+        Value(1) / quotient
     }
 
     init(_ quotient: Value, name: String? = nil) {
@@ -29,7 +29,7 @@ public extension GeometricRatio {
 
 // MARK: - GeometricRatio: Equatable
 
-extension GeometricRatio: Equatable {
+extension GeometricRatio: Equatable where Value: FloatingPoint {
     
     public static func == (lhs: Self, rhs: Self) -> Bool {
         return lhs.quotient == rhs.quotient
@@ -39,7 +39,7 @@ extension GeometricRatio: Equatable {
 
 // MARK: - GeometricRatio: Comparable
 
-extension GeometricRatio: Comparable {
+extension GeometricRatio: Comparable where Value: FloatingPoint {
     
     public static func < (lhs: Self, rhs: Self) -> Bool {
         lhs.quotient < rhs.quotient
