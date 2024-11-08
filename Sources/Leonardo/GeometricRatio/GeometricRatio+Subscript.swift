@@ -5,45 +5,6 @@
 //  Created by Nick on 26.09.24.
 //
 
-// MARK: - requiring SwiftUICore
-
-import SwiftUICore
-
-extension GeometricRatio where Value == Double {
-
-    /// Returns the n-th application of the ratio onto itself.
-    subscript(color index: Int) -> Color {
-        self[phase: index].color
-    }
-
-    /// Returns the n-th application of the ratio onto itself.
-    subscript(angle index: Int) -> Angle {
-        .init(radians: Value(index) * angle.radians)
-    }
-
-    /// Returns the n-th application of the ratio onto itself.
-    subscript(phase index: Int) -> Angle {
-        .init(radians: self[angle: index].phase)
-    }
-
-    /// Returns the n-th application of the ratio onto itself.
-    subscript(hue index: Int) -> Value {
-        self[phase: index].hue
-    }
-
-}
-
-// MARK: ValueType is CGFloat
-
-public extension GeometricRatio where Value == CGFloat {
-
-    /// Returns the n-th application of the ratio onto itself.
-    subscript(_ times: Int) -> Value {
-        pow(quotient, CGFloat(times))
-    }
-
-}
-
 // MARK: ValueType: Real
 
 import RealModule
@@ -51,8 +12,22 @@ import RealModule
 public extension GeometricRatio where Value: Real {
 
     /// Returns the n-th application of the ratio onto itself.
-    subscript(_ times: Int) -> Value {
-        .pow(quotient, times)
+    subscript(_ times: Int) -> Self {
+        Self(.pow(quotient, times))
     }
 
 }
+
+// MARK: ValueType is CGFloat
+
+import SwiftUICore
+
+public extension GeometricRatio where Value == CGFloat {
+
+    /// Returns the n-th application of the ratio onto itself.
+    subscript(_ times: Int) -> Self {
+        Self(pow(quotient, CGFloat(times)))
+    }
+
+}
+
