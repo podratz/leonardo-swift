@@ -1,32 +1,12 @@
 import Testing
 @testable import Leonardo
 
-@Test func testFiniteSequence() {
+@Test func testSequence() {
     let expected = [Ratio.gold[1], Ratio.gold[2], Ratio.gold[3]]
-    #expect(expected == Ratio.gold.sequence(length: 3).map(\.quotient))
+    #expect(expected == Ratio.gold.sequence.prefix(3).map(\.quotient))
 }
 
-@Test func testInfiniteSequence() {
-    let expected = [Ratio.gold[1], Ratio.gold[2], Ratio.gold[3]]
-    #expect(expected == Ratio.gold.infiniteSequence.prefix(3).map(\.quotient))
-}
-
-@Test func testFiniteTailSequence() {
-    let expected = [Ratio.gold[3], Ratio.gold[4], Ratio.gold[5]]
-    #expect(expected == Ratio.gold.tail(2, length: 3).map(\.quotient))
-}
-
-@Test func testInfiniteTailSequence() {
-    let expected = [Ratio.gold[3], Ratio.gold[4], Ratio.gold[5]]
-    #expect(expected == Ratio.gold.tail(2).prefix(3).map(\.quotient))
-}
-
-@Test func testDefaultTailSequence() {
-    let expected = [Ratio.gold[2], Ratio.gold[3], Ratio.gold[4]]
-    #expect(expected == Ratio.gold.tail(length: 3).map(\.quotient))
-}
-
-@Test func testTailSequenceProperty() {
+@Test func testTail() {
     let expected = [Ratio.gold[2], Ratio.gold[3], Ratio.gold[4]]
     #expect(expected == Ratio.gold.tail.prefix(3).map(\.quotient))
 }
