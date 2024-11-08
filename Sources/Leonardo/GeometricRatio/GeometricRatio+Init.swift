@@ -26,7 +26,8 @@ public extension GeometricRatio where Value: FloatingPoint {
     /// - Note: Ensure that the denominator is not zero to avoid throwing an error.
     init(of numerator: Value, to denominator: Value, name: String? = nil) throws(GeometricRatioError) {
         guard denominator != 0 else { throw .invalidDenominator }
-        self.quotient = numerator / denominator
+        self.numerator = numerator
+        self.denominator = denominator
         self.name = name
     }
 }

@@ -10,8 +10,7 @@
 extension GeometricRatio: ExpressibleByIntegerLiteral where Value: ExpressibleByIntegerLiteral {
 
     public init(integerLiteral value: Value.IntegerLiteralType) {
-        self.quotient = Value(integerLiteral: value)
-        self.name = nil
+        self.init(Value(integerLiteral: value), name: nil)
     }
 
 }
@@ -19,8 +18,7 @@ extension GeometricRatio: ExpressibleByIntegerLiteral where Value: ExpressibleBy
 extension GeometricRatio: ExpressibleByFloatLiteral where Value: ExpressibleByFloatLiteral {
 
     public init(floatLiteral value: Value.FloatLiteralType) {
-        self.quotient = Value(floatLiteral: value)
-        self.name = nil
+        self.init(Value(floatLiteral: value), name: nil)
     }
 
 }
