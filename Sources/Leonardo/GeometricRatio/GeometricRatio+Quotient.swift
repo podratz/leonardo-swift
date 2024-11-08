@@ -26,23 +26,3 @@ public extension GeometricRatio where Value: FloatingPoint {
     }
 
 }
-
-// MARK: - GeometricRatio: Equatable
-
-extension GeometricRatio: Equatable where Value: FloatingPoint {
-    
-    public static func == (lhs: Self, rhs: Self) -> Bool {
-        return lhs.quotient == rhs.quotient
-    }
-    
-}
-
-// MARK: - GeometricRatio: Comparable
-
-extension GeometricRatio: Comparable where Value: FloatingPoint {
-    
-    public static func < (lhs: Self, rhs: Self) -> Bool {
-        lhs.quotient < rhs.quotient
-    }
-
-}
