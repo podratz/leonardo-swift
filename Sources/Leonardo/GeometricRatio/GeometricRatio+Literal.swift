@@ -7,19 +7,19 @@
 
 // MARK: + Expressible by literal
 
-extension GeometricRatio: ExpressibleByIntegerLiteral where ValueType: ExpressibleByIntegerLiteral {
+extension GeometricRatio: ExpressibleByIntegerLiteral where Value: ExpressibleByIntegerLiteral {
 
-    public init(integerLiteral value: ValueType.IntegerLiteralType) {
-        self.quotient = ValueType(integerLiteral: value)
+    public init(integerLiteral value: Value.IntegerLiteralType) {
+        self.quotient = Value(integerLiteral: value)
         self.name = nil
     }
 
 }
 
-extension GeometricRatio: ExpressibleByFloatLiteral where ValueType: ExpressibleByFloatLiteral {
+extension GeometricRatio: ExpressibleByFloatLiteral where Value: ExpressibleByFloatLiteral {
 
-    public init(floatLiteral value: ValueType.FloatLiteralType) {
-        self.quotient = ValueType(floatLiteral: value)
+    public init(floatLiteral value: Value.FloatLiteralType) {
+        self.quotient = Value(floatLiteral: value)
         self.name = nil
     }
 

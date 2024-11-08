@@ -5,7 +5,7 @@
 //  Created by Nick on 26.09.24.
 //
 
-public extension GeometricRatio where ValueType: FloatingPoint {
+public extension GeometricRatio where Value: FloatingPoint {
     /// Initializes a `GeometricRatio` with a numerator and a denominator.
     ///
     /// This initializer computes the ratio by dividing the given numerator by the denominator.
@@ -24,7 +24,7 @@ public extension GeometricRatio where ValueType: FloatingPoint {
     ///   ```
     ///
     /// - Note: Ensure that the denominator is not zero to avoid throwing an error.
-    init(numerator: ValueType, denominator: ValueType) throws(GeometricRatioError) {
+    init(numerator: Value, denominator: Value) throws(GeometricRatioError) {
         guard denominator != 0 else { throw .invalidDenominator }
         self.quotient = numerator / denominator
         self.name = nil

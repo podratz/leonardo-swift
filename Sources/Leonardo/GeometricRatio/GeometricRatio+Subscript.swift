@@ -9,7 +9,7 @@
 
 import SwiftUICore
 
-extension GeometricRatio where ValueType == Double {
+extension GeometricRatio where Value == Double {
 
     /// Returns the n-th application of the ratio onto itself.
     subscript(color index: Int) -> Color {
@@ -18,7 +18,7 @@ extension GeometricRatio where ValueType == Double {
 
     /// Returns the n-th application of the ratio onto itself.
     subscript(angle index: Int) -> Angle {
-        .init(radians: ValueType(index) * angle.radians)
+        .init(radians: Value(index) * angle.radians)
     }
 
     /// Returns the n-th application of the ratio onto itself.
@@ -27,7 +27,7 @@ extension GeometricRatio where ValueType == Double {
     }
 
     /// Returns the n-th application of the ratio onto itself.
-    subscript(hue index: Int) -> ValueType {
+    subscript(hue index: Int) -> Value {
         self[phase: index].hue
     }
 
@@ -35,10 +35,10 @@ extension GeometricRatio where ValueType == Double {
 
 // MARK: ValueType is CGFloat
 
-public extension GeometricRatio where ValueType == CGFloat {
+public extension GeometricRatio where Value == CGFloat {
 
     /// Returns the n-th application of the ratio onto itself.
-    subscript(_ times: Int) -> ValueType {
+    subscript(_ times: Int) -> Value {
         pow(quotient, CGFloat(times))
     }
 
@@ -48,10 +48,10 @@ public extension GeometricRatio where ValueType == CGFloat {
 
 import RealModule
 
-public extension GeometricRatio where ValueType: Real {
+public extension GeometricRatio where Value: Real {
 
     /// Returns the n-th application of the ratio onto itself.
-    subscript(_ times: Int) -> ValueType {
+    subscript(_ times: Int) -> Value {
         .pow(quotient, times)
     }
 

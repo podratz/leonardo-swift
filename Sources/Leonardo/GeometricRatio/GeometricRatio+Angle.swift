@@ -7,7 +7,7 @@
 
 // MARK: ValueType is Double
 
-public extension GeometricRatio where ValueType == Double {
+public extension GeometricRatio where Value == Double {
 
     /// The angle associated with the ratio.
     var angle: Angle {
@@ -22,7 +22,7 @@ public extension GeometricRatio where ValueType == Double {
     }
 
     /// The phase value derived from interpreting the ratio as an angle.
-    var phase: ValueType {
+    var phase: Value {
         angle.radians.truncatingRemainder(dividingBy: .tau)
     }
 

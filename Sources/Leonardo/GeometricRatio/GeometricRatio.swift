@@ -12,13 +12,13 @@ import RealModule
 /// The Ratio type embodies the concept of a geometric ratio. It is intended to make UI work based on geometric relationships easier and more intuitive.
 /// The type provides many properties and methods that allow for convenient access to many ratios' irrational properties.
 /// Several common ratios are provided and made accessible as static computed variables. Try `Ratio.golden` to get started.
-public struct GeometricRatio<ValueType: Comparable>: Equatable, Comparable {
-    public typealias ValueType = ValueType
+public struct GeometricRatio<Value: Comparable>: Equatable, Comparable {
+    public typealias Value = Value
 
-    public let quotient: ValueType
+    public let quotient: Value
     public let name: String?
 
-    public init(_ quotient: ValueType, name: String? = nil) {
+    public init(_ quotient: Value, name: String? = nil) {
         self.quotient = quotient
         self.name = name
     }
@@ -35,15 +35,15 @@ public struct GeometricRatio<ValueType: Comparable>: Equatable, Comparable {
 
 // MARK: ValueType: FloatingPoint
 
-public extension GeometricRatio where ValueType: FloatingPoint {
+public extension GeometricRatio where Value: FloatingPoint {
 
     /// The reciprocal of the ratio. The invariant (1 / quotient == reciprocal) holds.
-    var reciprocal: ValueType {
+    var reciprocal: Value {
         1 / quotient
     }
 
     /// The proportion between one value (default 0) and a second.
-    func proportion(_ from: ValueType = 0, to: ValueType) -> ValueType {
+    func proportion(_ from: Value = 0, to: Value) -> Value {
          from + (to - from) / quotient
     }
 
