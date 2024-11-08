@@ -21,6 +21,8 @@ extension GeometricRatio where Value: Real {
         }
     }
     
+    var tail: AnySequence<Self> { tail(1) }
+    
     func tail(_ n: Int = 1, length: Int? = nil) -> AnySequence<Self> {
         if let length {
             AnySequence(sequence(length: n + length).dropFirst(n))

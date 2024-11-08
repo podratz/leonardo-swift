@@ -25,3 +25,8 @@ import Testing
     let expected = [Ratio.gold[2], Ratio.gold[3], Ratio.gold[4]]
     #expect(expected == Ratio.gold.tail(length: 3).map(\.quotient))
 }
+
+@Test func testTailSequenceProperty() {
+    let expected = [Ratio.gold[2], Ratio.gold[3], Ratio.gold[4]]
+    #expect(expected == Ratio.gold.tail.prefix(3).map(\.quotient))
+}
