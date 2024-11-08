@@ -6,7 +6,7 @@ extension GeometricRatioTests {
 
         @Test("values (up to 3 digits)", arguments: [
             ("1.000", .platinum ),
-            ("1.618", .golden   ),
+            ("1.618", .gold     ),
             ("2.414", .silver   ),
             ("3.303", .bronce   ),
             ("4.236", .copper   ),
@@ -23,13 +23,13 @@ extension GeometricRatioTests {
 
         @Test("reciprocals")
         func testReciprocal() {
-            let ratio = Ratio.golden
+            let ratio = Ratio.gold
             #expect(ratio.reciprocal == 1 / ratio.quotient)
         }
 
         @Test("names", arguments: [
             ("Platinum",  .platinum ),
-            ("Golden",    .golden   ),
+            ("Golden",    .gold     ),
             ("Silver",    .silver   ),
             ("Bronce",    .bronce   ),
             ("Copper",    .copper   ),

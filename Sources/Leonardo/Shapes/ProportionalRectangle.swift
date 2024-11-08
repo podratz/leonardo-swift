@@ -80,13 +80,13 @@ extension ProportionalRectangle {
 }
 
 #Preview {
-    ProportionalRectangle(ratio: .golden, orientation: .landscape)
+    ProportionalRectangle(ratio: .gold, orientation: .landscape)
         .strokeBorder(.red, lineWidth: 10)
         .frame(length: 200)
-    ProportionalRectangle(ratio: .golden, orientation: .landscape)
+    ProportionalRectangle(ratio: .gold, orientation: .landscape)
         .strokeBorder(.red, lineWidth: 60)
         .frame(length: 200)
-    ProportionalRectangle(ratio: .golden, orientation: .landscape)
+    ProportionalRectangle(ratio: .gold, orientation: .landscape)
         .strokeBorder(.red, lineWidth: 170)
         .frame(length: 200)
     .edgesIgnoringSafeArea(.all)

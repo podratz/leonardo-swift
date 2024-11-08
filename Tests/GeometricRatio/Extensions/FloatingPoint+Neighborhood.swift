@@ -8,7 +8,7 @@ extension GeometricRatioTests.Extensions {
 
         @Test("Neighborhood on floating point")
         func testNeighborhoodOnFloatingPoint() {
-            let ratio: Ratio = .golden
+            let ratio: Ratio = .gold
             let neighborhood = 1.neighborhood(ratio: ratio)
             #expect(neighborhood == [ratio.reciprocal, 1, ratio.quotient])
         }

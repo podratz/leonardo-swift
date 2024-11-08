@@ -5,7 +5,7 @@ import CoreGraphics
 extension GeometricRatioTests {
     struct Subscripts {
 
-        @Test("Ratio subscripts", arguments: [Ratio.golden])
+        @Test("Ratio subscripts", arguments: [Ratio.gold])
         func testDoubleValueSubscripts(ratio: Ratio) {
             #expect(ratio[-1] == ratio[1].reciprocal)
             #expect(ratio[0] == 1)
@@ -15,8 +15,8 @@ extension GeometricRatioTests {
 
         @Test("GeometricRatio<CGFloat> subscripts")
         func testCGFloatValueSubscripts() {
-            let cgRatio = GeometricRatio<CGFloat>.golden
-            let doubleRatio = Ratio.golden
+            let cgRatio = GeometricRatio<CGFloat>.gold
+            let doubleRatio = Ratio.gold
             #expect(Double(cgRatio[1]) == doubleRatio[1])
         }
 

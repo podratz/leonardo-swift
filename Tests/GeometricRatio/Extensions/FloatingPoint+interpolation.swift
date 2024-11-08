@@ -7,8 +7,8 @@ extension GeometricRatioTests.Extensions {
     struct FloatingPointInterpolationExtensions {
 
         @Test("interpolate proportionally") func testProportionalInterpolation() {
-            let value = 1.interpolated(towards: 2, proportion: .golden)
-            #expect(value == Ratio.golden.quotient)
+            let value = 1.interpolated(towards: 2, proportion: .gold)
+            #expect(value == Ratio.gold.quotient)
         }
 
     }
