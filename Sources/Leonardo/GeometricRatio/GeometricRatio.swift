@@ -15,43 +15,14 @@ import RealModule
 public struct GeometricRatio<Value: FloatingPoint>: Equatable, Comparable {
     public typealias Value = Value
     
-    public var quotient: Value {
-        numerator / denominator
-    }
-
     public let numerator: Value
     public let denominator: Value
 
     public let name: String?
 
-    public init(_ quotient: Value, name: String? = nil) {
-        self.numerator = quotient
-        self.denominator = Value(1)
+    public init(of numerator: Value, to denominator: Value, name: String? = nil) {
+        self.numerator = numerator
+        self.denominator = denominator
         self.name = name
     }
-
-    public static func == (lhs: Self, rhs: Self) -> Bool {
-        return lhs.quotient == rhs.quotient
-    }
-
-    public static func < (lhs: Self, rhs: Self) -> Bool {
-        lhs.quotient < rhs.quotient
-    }
-
-}
-
-// MARK: ValueType: FloatingPoint
-
-public extension GeometricRatio {
-
-    /// The reciprocal of the ratio. The invariant (1 / quotient == reciprocal) holds.
-    var reciprocal: Value {
-        1 / quotient
-    }
-
-    /// The proportion between one value (default 0) and a second.
-    func proportion(_ from: Value = 0, to: Value) -> Value {
-         from + (to - from) / quotient
-    }
-
 }
