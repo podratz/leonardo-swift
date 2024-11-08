@@ -9,12 +9,12 @@ import RealModule
 
 extension GeometricRatio where Value: Real {
     
-    var tail: AnySequence<Self> {
-        AnySequence(sequence.dropFirst())
+    var tail: some Sequence<Self> {
+        sequence.dropFirst()
     }
     
-    var sequence: AnySequence<Self> {
-        AnySequence(InfiniteSequence(ratio: self))
+    var sequence: some Sequence<Self> {
+        InfiniteSequence(ratio: self)
     }
 
 }
