@@ -9,11 +9,11 @@ import RealModule
 
 extension GeometricRatio where Value: Real {
     
-    func tail(_ dropFirstK: Int = 1, length: Int? = nil) -> AnySequence<Self> {
+    func tail(_ n: Int = 1, length: Int? = nil) -> AnySequence<Self> {
         if let length {
-            AnySequence(sequence(length: dropFirstK + length).dropFirst(dropFirstK))
+            AnySequence(sequence(length: n + length).dropFirst(n))
         } else {
-            AnySequence(infiniteSequence.dropFirst(dropFirstK))
+            AnySequence(infiniteSequence.dropFirst(n))
         }
     }
     

@@ -20,3 +20,8 @@ import Testing
     let expected = [Ratio.gold[3], Ratio.gold[4], Ratio.gold[5]]
     #expect(expected == Ratio.gold.tail(2).prefix(3).map(\.quotient))
 }
+
+@Test func testDefaultTailSequence() {
+    let expected = [Ratio.gold[2], Ratio.gold[3], Ratio.gold[4]]
+    #expect(expected == Ratio.gold.tail(length: 3).map(\.quotient))
+}
