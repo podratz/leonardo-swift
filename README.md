@@ -20,6 +20,18 @@ import Leonardo
 let doubling: Ratio = 2
 ```
 
+## Create handy shortcuts
+
+The following definitions are useful in contexts that benefit from terse syntax, like graphics programming:
+
+```swift
+let g = Ratio.gold
+let s = Ratio.silver
+let b = Ratio.bronce
+
+g[2].quotient // 2.618033988749895
+```
+
 ## Interactive Examples
 
 To see some more elaborate and interactive examples, check out the playgrounds provided with this package under `/Examples.playground`.
