@@ -12,6 +12,13 @@ extension GeometricRatioTests {
             #expect(ratio[1].quotient == ratio.quotient)
             #expect(ratio[2].quotient == ratio.quotient * ratio.quotient)
         }
+        
+        @Test("Ratio range subscripts")
+        func testRatioRangeSubscript() {
+            let thirdRatio = Ratio.gold[3]
+            let firstFiveRatios = Ratio.gold[1...5]
+            #expect(thirdRatio == firstFiveRatios[2])
+        }
 
         @Test("GeometricRatio<CGFloat> subscripts")
         func testCGFloatValueSubscripts() {
@@ -19,6 +26,5 @@ extension GeometricRatioTests {
             let doubleRatio = Ratio.gold
             #expect(Double(cgRatio[1].quotient) == doubleRatio[1].quotient)
         }
-
     }
 }
