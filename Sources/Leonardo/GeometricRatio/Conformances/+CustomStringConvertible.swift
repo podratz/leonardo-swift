@@ -14,8 +14,7 @@ extension GeometricRatio: CustomStringConvertible where Value == FloatLiteralTyp
     }
 
     public var qualifiedName: String {
-        let namePrefix = if let name { name } else { "Unnamed" }
-        return namePrefix + " Ratio"
+        (name ?? "Unnamed").appending(" Ratio")
     }
     
     public var numericDescription: String {
