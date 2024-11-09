@@ -9,6 +9,20 @@
 
 import RealModule
 
+public extension GeometricRatio where Value == Double {
+    
+    /// Returns the angle at the given index for this ratio.
+    subscript(angle index: Int) -> Angle {
+        .init(radians: Double(index) * self.angle.radians)
+    }
+    
+    /// Returns an array of angles at the given indices of the range for this ratio.
+    subscript(angles range: ClosedRange<Int>) -> [Angle] {
+        range.map { self[angle: $0] }
+    }
+
+}
+
 public extension GeometricRatio where Value: Real {
 
     /// Returns the n-th application of the ratio onto itself.
