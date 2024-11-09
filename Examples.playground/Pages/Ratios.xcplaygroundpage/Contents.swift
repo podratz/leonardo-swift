@@ -4,6 +4,6 @@ import Leonardo
 
 let doubling: Ratio = 2
 
-for neighbor in doubling.neighborhood(radius: 4) {
+for neighbor in 16.neighborhood(ratio: doubling, radius: 4) {
     neighbor
 }
