@@ -22,7 +22,7 @@ let doubling: Ratio = 2
 
 ## Interactive Examples
 
-To see some more elaborate and interactive examples, check out the playgrounds provided with this package under `/Examples/example.playground`.
+To see some more elaborate and interactive examples, check out the playgrounds provided with this package under `/Examples.playground`.
 
 ## Contributions
 
