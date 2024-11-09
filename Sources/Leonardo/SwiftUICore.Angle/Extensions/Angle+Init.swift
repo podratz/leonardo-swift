@@ -11,7 +11,7 @@ public extension Angle {
 
     /// Initializes an `Angle` from the provided ratio.
     @inlinable init(ratio: GeometricRatio<Double>) {
-        self.init(radians: .tau * (1 - 1 / ratio.quotient))
+        self.init(radians: .tau * (1 - ratio.reciprocal))
     }
 
 }
