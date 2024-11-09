@@ -10,11 +10,11 @@ import Foundation
 extension GeometricRatio: CustomStringConvertible where Value == FloatLiteralType {
     
     public var description: String {
-        "\(numericDescription) \(qualifiedName.bracketed)"
+        numericDescription.appendingSpaced(qualifiedName.bracketed)
     }
 
     public var qualifiedName: String {
-        (name ?? "Unnamed").appending(" Ratio")
+        (name ?? "Unnamed").appendingSpaced("Ratio")
     }
     
     public var numericDescription: String {
@@ -34,6 +34,10 @@ fileprivate extension String {
     
     var bracketed: String {
         "(" + self + ")"
+    }
+    
+    func appendingSpaced(_ other: some StringProtocol) -> String {
+        self + " " + other
     }
 }
 
