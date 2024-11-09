@@ -10,7 +10,7 @@ import Foundation
 extension GeometricRatio: CustomStringConvertible where Value == FloatLiteralType {
     
     public var description: String {
-        "\(numericDescription) (\(qualifiedName))"
+        "\(numericDescription) \(qualifiedName.bracketed)"
     }
 
     public var qualifiedName: String {
@@ -29,6 +29,13 @@ extension GeometricRatio: CustomStringConvertible where Value == FloatLiteralTyp
         UnicodeScalar(0x2236).flatMap(String.init) ?? ":"
     }
 
+}
+
+fileprivate extension String {
+    
+    var bracketed: String {
+        "(" + self + ")"
+    }
 }
 
 fileprivate extension FloatLiteralType {
