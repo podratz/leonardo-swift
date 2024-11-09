@@ -17,6 +17,7 @@ extension GeometricRatio: CustomStringConvertible where Value == FloatLiteralTyp
         let formatter = NumberFormatter()
         formatter.numberStyle = .decimal
         formatter.maximumFractionDigits = 3
+        formatter.locale = .init(identifier: "en_US")
 
         let numerator = NSNumber(floatLiteral: numerator)
         let formattedNumerator = formatter.string(from: numerator)!
