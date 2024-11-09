@@ -1,9 +1,16 @@
 import Leonardo
 
-for ratio in Ratio.gold.tail.prefix(5) {
-    ratio.quotient
-}
 
-let colors = Ratio.gold.lazy.map(\.angle.color).prefix(1).first().
+// MARK: Ratio-based sequences
 
-print(colors)
+let ratios = Ratio.gold.prefix(5)
+
+let quotients = ratios.map(\.quotient)
+
+
+// MARK: Angle-based sequences
+
+let angles = ratios.map(\.angle)
+
+let colors = angles.map(\.color)
+let complex = angles.map(\.complex)
