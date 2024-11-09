@@ -1,6 +1,12 @@
 import Testing
 @testable import Leonardo
 
-@Test func testNext() {
-    #expect(Ratio.gold.next()?.quotient == Ratio.gold[2].quotient)
+extension GeometricRatioTests {
+    struct Iterator {
+        
+        @Test func testNext() {
+            #expect(Ratio.gold.next()?.quotient == Ratio.gold[2].quotient)
+        }
+        
+    }
 }
