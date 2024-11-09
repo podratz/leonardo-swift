@@ -1,5 +1,5 @@
 //
-//  FiniteSequence.swift
+//  Sequence.swift
 //  leonardo-swift
 //
 //  Created by Nick Podratz on 08.11.24.

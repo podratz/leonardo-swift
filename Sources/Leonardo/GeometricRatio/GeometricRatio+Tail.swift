@@ -1,5 +1,5 @@
 //
-//  GeometricRatio+Sequence.swift
+//  GeometricRatio+Tail.swift
 //  leonardo-swift
 //
 //  Created by Nick Podratz on 08.11.24.
