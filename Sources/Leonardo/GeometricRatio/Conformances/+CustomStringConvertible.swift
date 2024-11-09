@@ -14,16 +14,11 @@ extension GeometricRatio: CustomStringConvertible where Value == FloatLiteralTyp
     }
 
     public var numericDescription: String {
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .decimal
-        formatter.maximumFractionDigits = 3
-        formatter.locale = .init(identifier: "en_US")
-
         let numerator = NSNumber(floatLiteral: numerator)
-        let formattedNumerator = formatter.string(from: numerator)!
+        let formattedNumerator = Self.termFormatter.string(from: numerator)!
 
         let denominator = NSNumber(floatLiteral: denominator)
-        let formattedDenominator = formatter.string(from: denominator)!
+        let formattedDenominator = Self.termFormatter.string(from: denominator)!
         
         return formattedNumerator + Self.dividerSymbol + formattedDenominator
     }
@@ -31,6 +26,14 @@ extension GeometricRatio: CustomStringConvertible where Value == FloatLiteralTyp
     public var qualifiedName: String {
         let namePrefix = if let name { name } else { "Unnamed" }
         return namePrefix + " Ratio"
+    }
+        
+    private static var termFormatter: NumberFormatter {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        formatter.maximumFractionDigits = 3
+        formatter.locale = .init(identifier: "en_US")
+        return formatter
     }
     
     private static var dividerSymbol: String {
