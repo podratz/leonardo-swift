@@ -1,5 +1,6 @@
 import Leonardo
 
+Ratio.gold.description
 
 // MARK: Ratio-based sequences
 

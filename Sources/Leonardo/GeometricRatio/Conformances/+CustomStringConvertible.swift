@@ -25,7 +25,7 @@ extension GeometricRatio: CustomStringConvertible where Value == FloatLiteralTyp
         let denominator = NSNumber(floatLiteral: denominator)
         let formattedDenominator = formatter.string(from: denominator)!
         
-        return formattedNumerator + ":" + formattedDenominator
+        return formattedNumerator + Self.dividerSymbol + formattedDenominator
     }
 
     public var qualifiedName: String {
@@ -33,4 +33,8 @@ extension GeometricRatio: CustomStringConvertible where Value == FloatLiteralTyp
         return namePrefix + " Ratio"
     }
     
+    private static var dividerSymbol: String {
+        UnicodeScalar(0x2236).flatMap(String.init) ?? ":"
+    }
+
 }
