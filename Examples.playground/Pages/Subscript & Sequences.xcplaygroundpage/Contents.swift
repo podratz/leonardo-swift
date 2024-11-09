@@ -18,8 +18,8 @@ let complex = angles.map(\.complex)
 
 // MARK: Index-based acccess for ratios
 
-let thirdQuotient = Ratio.gold[3].quotient
-let firstFiveQuotients = Ratio.gold[0...5].map(\.quotient)
+let thirdQuotient = Ratio.gold[2].quotient
+let firstFiveQuotients = Ratio.gold[0...4].map(\.quotient)
 
-let thirdAngle = Ratio.gold[angle: 3].degrees
-let firstFiveAngles = Ratio.gold[angles: 1...5].map(\.degrees)
+let thirdAngle = Ratio.gold[angle: 2].degrees
+let firstFiveAngles = Ratio.gold[angles: 0...4].map(\.degrees)

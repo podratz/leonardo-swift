@@ -16,7 +16,7 @@ public extension GeometricRatio where Value == Double {
     
     /// The sequence of angles derived from iterative application of this ratio.
     var angles: some Swift.Sequence<Angle> {
-        (0...).lazy.map {
+        (1...).lazy.map {
             .init(radians: Double($0) * angle.radians)
         }
     }
