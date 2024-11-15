@@ -14,3 +14,11 @@ extension Real {
     }
     
 }
+
+extension Int {
+    
+    func segmented(by ratio: ContinuedRatio<Int>) -> [Double] {
+        ratio.normalized.segment(Double(self))
+    }
+    
+}

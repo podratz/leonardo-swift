@@ -7,9 +7,10 @@
 
 public extension ContinuedRatio where Term == Int {
     
-    var simplified: [Term] {
+    var simplified: Self {
         let gcd = gcd(terms)
-        return terms.map { $0 / gcd }
+        let simplifiedTerms = terms.map { $0 / gcd }
+        return Self(simplifiedTerms)
     }
 
 }

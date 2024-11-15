@@ -10,7 +10,7 @@ import RealModule
 extension ContinuedRatio where Term: Real {
     
     func segment(_ number: Term) -> [Term] {
-        normalized.map { $0 * number }
+        normalized.terms.map { $0 * number }
     }
     
 }
@@ -18,7 +18,7 @@ extension ContinuedRatio where Term: Real {
 extension ContinuedRatio where Term == Int {
     
     func segment(_ number: Double) -> [Double] {
-        normalized.map { $0 * number }
+        normalized.terms.map { $0 * number }
     }
     
 }

@@ -9,7 +9,7 @@ public struct ContinuedRatio<Term> {
     public let terms: [Term]
     public let name: String?
     
-    public init(_ terms: Term..., name: String? = nil) {
+    public init(_ terms: [Term], name: String? = nil) {
         self.terms = terms
         self.name = name
     }
