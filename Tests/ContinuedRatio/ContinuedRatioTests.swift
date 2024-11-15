@@ -10,9 +10,9 @@ struct ContinuedRatioTests {
     }
     
     @Test("Simplification") func testSimplified() {
-        let ratioA = ContinuedRatio(1, 2, 3)
-        let ratioB = ContinuedRatio(2, 4, 6)
-        #expect(ratioA.simplified == ratioB.simplified)
+        let ratioA = ContinuedRatio(2, 4, 6)
+        let ratioB = ContinuedRatio(1, 2, 3)
+        #expect(ratioA.simplified == ratioB)
     }
 
     @Test("Normalization") func testNormalization() {
@@ -27,9 +27,8 @@ struct ContinuedRatioTests {
         #expect(ratio.segment(100) == segmentation)
     }
 
-    
     @Test("Segmented extension") func testSegmentedExtension() {
-        let ratio = ContinuedRatio(1.0, 3.0, 6.0)
+        let ratio = ContinuedRatio(1, 3, 6)
         let segmentation = [10.0, 30.0, 60.0]
         #expect(100.segmented(by: ratio) == segmentation)
     }
