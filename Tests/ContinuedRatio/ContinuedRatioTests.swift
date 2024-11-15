@@ -12,13 +12,13 @@ struct ContinuedRatioTests {
     @Test("Simplification") func testSimplified() {
         let ratioA = ContinuedRatio(1, 2, 3)
         let ratioB = ContinuedRatio(2, 4, 6)
-        #expect(ratioA.simplified.terms == ratioB.simplified.terms)
+        #expect(ratioA.simplified == ratioB.simplified)
     }
 
     @Test("Normalization") func testNormalization() {
         let ratioA = ContinuedRatio(1, 3, 6)
         let ratioB = ContinuedRatio(0.1, 0.3, 0.6)
-        #expect(ratioA.normalized.terms == ratioB.terms)
+        #expect(ratioA.normalized == ratioB)
     }
 
     @Test("Segment") func testSegment() {
