@@ -14,5 +14,11 @@ struct ContinuedRatioTests {
         let ratioB = ContinuedRatio(2, 4, 6)
         #expect(ratioA.simplified == ratioB.simplified)
     }
-    
+
+    @Test("Normalization") func testNormalization() {
+        let ratioA = ContinuedRatio(1, 3, 6)
+        let ratioB = ContinuedRatio(0.1, 0.3, 0.6)
+        #expect(ratioA.normalized == ratioB.terms)
+    }
+
 }
