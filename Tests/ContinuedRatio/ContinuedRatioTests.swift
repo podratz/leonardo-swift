@@ -21,10 +21,17 @@ struct ContinuedRatioTests {
         #expect(ratioA.normalized == ratioB.terms)
     }
 
-    @Test("Segmentation") func testSegmentation() {
+    @Test("Segment") func testSegment() {
         let ratio = ContinuedRatio(1, 3, 6)
         let segmentation = [10.0, 30.0, 60.0]
         #expect(ratio.segment(100) == segmentation)
+    }
+
+    
+    @Test("Segmented extension") func testSegmentedExtension() {
+        let ratio = ContinuedRatio(1.0, 3.0, 6.0)
+        let segmentation = [10.0, 30.0, 60.0]
+        #expect(100.segmented(by: ratio) == segmentation)
     }
 
 }
