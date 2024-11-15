@@ -15,8 +15,11 @@ extension GeometricRatioTests {
             ("7.140", .iron     ),
             ("8.123", .tin      ),
             ("9.110", .lead     ),
-            ("1.325", .plastic  )]
-              as [(String, Ratio)])
+            ("1.325", .plastic  ),
+            ("1.414", .sqrt2    ),
+            ("1.732", .sqrt3    ),
+            ("2.236", .sqrt5    )
+        ] as [(String, Ratio)])
         func testConstantValue(rounded: String, ratio: Ratio) {
             #expect(rounded == String(format:"%.3f", ratio.quotient))
         }
@@ -28,18 +31,21 @@ extension GeometricRatioTests {
         }
 
         @Test("names", arguments: [
-            ("Platinum",  .platinum ),
-            ("Golden",    .gold     ),
-            ("Silver",    .silver   ),
-            ("Bronce",    .bronce   ),
-            ("Copper",    .copper   ),
-            ("Nickel",    .nickel   ),
-            ("Aluminium", .aluminium),
-            ("Iron",      .iron     ),
-            ("Tin",       .tin      ),
-            ("Lead",      .lead     ),
-            ("Plastic",   .plastic  )]
-              as [(String, Ratio)])
+            ("Platinum",  .platinum    ),
+            ("Golden",    .gold        ),
+            ("Silver",    .silver      ),
+            ("Bronce",    .bronce      ),
+            ("Copper",    .copper      ),
+            ("Nickel",    .nickel      ),
+            ("Aluminium", .aluminium   ),
+            ("Iron",      .iron        ),
+            ("Tin",       .tin         ),
+            ("Lead",      .lead        ),
+            ("Plastic",   .plastic     ),
+            ("Square Root of 2", .sqrt2),
+            ("Square Root of 3", .sqrt3),
+            ("Square Root of 5", .sqrt5)
+        ] as [(String, Ratio)])
         func testConstantName(name: String, ratio: Ratio) {
             #expect(ratio.name == name)
         }
