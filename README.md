@@ -12,8 +12,7 @@ To use the library, clone the project into your workspace. It is not yet availab
 
 ## Generate parameters for your UI
 
-There are various ways to use Leonardo to generate aesthetic parameters for your UI. For example, with the `ContinuedRatio` type and the `segment()` number extension, you can split a quantity into segments such that subsequent segments relate to another following a particular ratio (here the golden ratio).
-(Explore more on this in the playground page `Continuous Ratios`.)
+There are various ways to use Leonardo to generate aesthetic parameters for your UI. For example, with the `ContinuedRatio` type and its `segment()` number extension, you can split a quantity into segments such that subsequent segments relate to another following a particular ratio (such as the golden ratio).
 
 ```swift
 import Leonardo
@@ -22,6 +21,10 @@ let ratio = ContinuedRatio<Double>(.gold, numberOfTerms: 3)
 let segments = 100.segmented(by: ratio)
 // segments == [50.0, 30.901699437494745, 19.09830056250526]
 ```
+
+![UI parameterized with metallic ratios.](./.github/Images/ContinuedRatio.png 'UI parameterized with metallic ratios.')
+
+You find this example on the playground page `Continuous Ratios`.
 
 ## Define your own ratios
 
