@@ -5,7 +5,7 @@
 //  Created by Nick Podratz on 16.11.24.
 //
 
-extension ContinuedRatio {
+public extension ContinuedRatio {
     
     var simpleRatios: [GeometricRatio<Term>] {
         var output: [GeometricRatio<Term>] = []

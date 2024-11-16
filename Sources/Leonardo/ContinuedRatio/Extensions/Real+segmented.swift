@@ -7,7 +7,7 @@
 
 import RealModule
 
-extension Real {
+public extension Real {
     
     func segmented(by ratio: ContinuedRatio<Self>) -> [Self] {
         ratio.segment(self)
@@ -15,7 +15,7 @@ extension Real {
     
 }
 
-extension Int {
+public extension Int {
     
     func segmented(by ratio: ContinuedRatio<Int>) -> [Double] {
         ratio.normalized.segment(Double(self))
