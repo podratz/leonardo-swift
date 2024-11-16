@@ -5,7 +5,9 @@
 //  Created by Nick Podratz on 15.11.24.
 //
 
-public struct Proportion<Value: FloatingPoint> {
+import RealModule
+
+public struct Proportion<Value: Real> {
 
     public let numerator: Value
     public let denominator: Value

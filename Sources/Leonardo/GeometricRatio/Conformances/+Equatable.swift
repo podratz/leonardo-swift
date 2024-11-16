@@ -5,10 +5,12 @@
 //  Created by Nick Podratz on 08.11.24.
 //
 
-extension GeometricRatio: Equatable where Value: FloatingPoint {
+import RealModule
+
+extension GeometricRatio: Equatable where Value: Equatable {
     
     public static func == (lhs: Self, rhs: Self) -> Bool {
-        return lhs.quotient == rhs.quotient
+        return lhs.numerator == rhs.numerator && lhs.denominator == rhs.denominator
     }
     
 }

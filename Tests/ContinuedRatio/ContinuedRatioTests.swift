@@ -33,4 +33,10 @@ struct ContinuedRatioTests {
         #expect(100.segmented(by: ratio) == segmentation)
     }
 
+    @Test("Simple ratios") func testSimpleRatios() {
+        let ratio = ContinuedRatio(1, 3, 6)
+        let simpleRatios = [GeometricRatio(of: 1, to: 3), GeometricRatio(of: 3, to: 6)]
+        #expect(ratio.simpleRatios == simpleRatios)
+    }
+
 }
