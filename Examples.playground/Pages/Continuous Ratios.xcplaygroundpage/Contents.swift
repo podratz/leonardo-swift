@@ -4,21 +4,32 @@ import PlaygroundSupport
 
 struct Canvas: View {
 
-    let canvasWidth: Double = 300
-    let maxNumberOfTerms = 5
+    let canvasWidth: Double = 200
+    let maxNumberOfTerms = 13
     
     var body: some View {
-        section(.gold, .yellow)
-        section(.silver, .gray)
-        section(.bronce, .orange)
-        section(.plastic, .green)
+        HStack {
+            section(.platinum, .purple)
+            section(.gold, .yellow)
+            section(.silver, .gray)
+            section(.bronce, .orange)
+        }
+        HStack {
+            section(.plastic, .green)
+            section(.sqrt2, .mint)
+            section(.sqrt3, .blue)
+            section(.sqrt5, .indigo)
+        }
     }
     
     func section(_ ratio: Ratio, _ color: Color) -> some View {
-        ForEach(1...maxNumberOfTerms, id: \.self) { numberOfTerms in
-            let continuedRatio = ContinuedRatio<Double>(ratio, numberOfTerms: numberOfTerms)
-            let segments = canvasWidth.segmented(by: continuedRatio)
-            row(segments, color)
+        VStack(spacing: 0) {
+            ForEach(1...maxNumberOfTerms, id: \.self) { numberOfTerms in
+                let continuedRatio = ContinuedRatio<Double>(ratio, numberOfTerms: numberOfTerms)
+                let segments = canvasWidth.segmented(by: continuedRatio)
+                row(segments, color)
+            }
+            Text(ratio.description).font(.caption)
         }
     }
     
@@ -34,8 +45,8 @@ struct Canvas: View {
     
     func segment() -> some View {
         Rectangle()
-            .stroke(lineWidth: 5)
-            .frame(height: 50)
+            .stroke(lineWidth: 2)
+            .frame(height: 20)
     }
 
 }
