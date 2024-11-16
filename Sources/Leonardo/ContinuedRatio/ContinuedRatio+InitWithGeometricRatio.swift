@@ -10,7 +10,7 @@ import RealModule
 public extension ContinuedRatio where Term: Real {
     
     init(_ ratio: GeometricRatio<Term>, numberOfTerms: Int, name: String? = nil) {
-        let terms = (0...numberOfTerms).map { index in
+        let terms = (1...numberOfTerms).map { index in
             let power = numberOfTerms - index
             return Term.pow(ratio.quotient, power)
         }

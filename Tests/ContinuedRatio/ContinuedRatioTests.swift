@@ -10,7 +10,7 @@ struct ContinuedRatioTests {
     }
     
     @Test("Init with geometric ratios") func testInitWithGeometricRatios() {
-        let ratio = ContinuedRatio<Double>(.gold, numberOfTerms: 2)
+        let ratio = ContinuedRatio<Double>(.gold, numberOfTerms: 3)
         #expect(ratio.terms == [.pow(.phi, 2), .phi, 1])
         #expect(ratio.simpleRatios == [.gold, .gold])
     }
