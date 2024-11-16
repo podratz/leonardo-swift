@@ -4,9 +4,15 @@ import Testing
 @Suite("Continued Ratio")
 struct ContinuedRatioTests {
     
-    @Test("Init with terms") func testInit() {
+    @Test("Init with terms") func testInitWithTerms() {
         let ratio = ContinuedRatio(1, 2, 3)
         #expect(ratio.terms == [1, 2, 3])
+    }
+    
+    @Test("Init with geometric ratios") func testInitWithGeometricRatios() {
+        let ratio = ContinuedRatio<Double>(.gold, numberOfTerms: 2)
+        #expect(ratio.terms == [.pow(.phi, 2), .phi, 1])
+        #expect(ratio.simpleRatios == [.gold, .gold])
     }
     
     @Test("Simplification") func testSimplified() {
