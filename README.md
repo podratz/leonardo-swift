@@ -10,13 +10,24 @@ This library is inspired by another library I wrote a while back called [leonard
 
 To use the library, clone the project into your workspace. It is not yet available as its API cannot be considered stable. Once sufficiently stable, I will consider to package it for use with the Swift Package Manager from Apple, and possibly other package managers.
 
+## Generate parameters for your UI
+
+There are various ways to use Leonardo to generate aesthetic parameters for your UI. For example, with the `ContinuedRatio` type and the `segment()` number extension, you can split a quantity into segments such that subsequent segments relate to another following a particular ratio (here the golden ratio).
+(Explore more on this in the playground page `Continuous Ratios`.)
+
+```swift
+import Leonardo
+
+let ratio = ContinuedRatio<Double>(.gold, numberOfTerms: 3)
+let segments = 100.segmented(by: ratio)
+// segments == [50.0, 30.901699437494745, 19.09830056250526]
+```
+
 ## Define your own ratios
 
 Defining your own ratios is easy!
 
 ```swift
-import Leonardo
-
 let doubling: Ratio = 2
 ```
 
