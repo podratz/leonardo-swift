@@ -24,7 +24,7 @@ let segments = 100.segmented(by: ratio)
 
 ![UI parameterized with metallic ratios.](./.github/Images/ContinuedRatio.png 'UI parameterized with metallic ratios.')
 
-You find this example on the playground page `Continuous Ratios`.
+You find this example on the playground page `Continued Ratios`.
 
 ## Define your own ratios
 
