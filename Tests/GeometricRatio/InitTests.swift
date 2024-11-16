@@ -22,8 +22,8 @@ extension GeometricRatioTests {
         @Test("init(of:to:)")
         func testInitWithNumeratorAndDenominator() throws {
 
-            // invalid denominator argument
-            #expect(Ratio(of: 10, to: 0) == Ratio(.infinity))
+            // invalid arguments
+            #expect(Ratio(of: 10, to: 0) == Ratio(of: 20, to: 0))
 
             // valid arguments
             #expect(Ratio(of: 10, to: 20) == Ratio(0.5))

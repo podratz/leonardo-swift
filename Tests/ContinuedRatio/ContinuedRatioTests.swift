@@ -34,9 +34,16 @@ struct ContinuedRatioTests {
     }
 
     @Test("Simple ratios") func testSimpleRatios() {
-        let ratio = ContinuedRatio(1, 3, 6)
-        let simpleRatios = [GeometricRatio(of: 1, to: 3), GeometricRatio(of: 3, to: 6)]
-        #expect(ratio.simpleRatios == simpleRatios)
+        let ratioA = ContinuedRatio(1, 3, 6)
+        let simpleRatiosA = [GeometricRatio(of: 1, to: 3), GeometricRatio(of: 3, to: 6)]
+        #expect(ratioA.simpleRatios == simpleRatiosA)
+
+        let ratioB = ContinuedRatio(1, 3)
+        let simpleRatiosB = [GeometricRatio(of: 1, to: 3)]
+        #expect(ratioB.simpleRatios == simpleRatiosB)
+
+        let ratioC = ContinuedRatio(1)
+        #expect(ratioC.simpleRatios == [])
     }
 
 }

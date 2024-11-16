@@ -7,10 +7,10 @@
 
 import RealModule
 
-extension GeometricRatio: Equatable where Value: Equatable {
+extension GeometricRatio: Equatable where Value: Numeric {
     
     public static func == (lhs: Self, rhs: Self) -> Bool {
-        return lhs.numerator == rhs.numerator && lhs.denominator == rhs.denominator
+        lhs.numerator * rhs.denominator == lhs.denominator * rhs.numerator
     }
     
 }
