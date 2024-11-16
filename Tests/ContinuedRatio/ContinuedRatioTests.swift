@@ -51,5 +51,10 @@ struct ContinuedRatioTests {
         let ratioC = ContinuedRatio(1)
         #expect(ratioC.simpleRatios == [])
     }
-
+    
+    @Test("Inversed") func testInversed() {
+        let ratio = ContinuedRatio(1, 2, 3)
+        #expect(ratio.inversed == ContinuedRatio(3, 2, 1))
+    }
+    
 }
