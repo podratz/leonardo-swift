@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension GeometricRatio: CustomStringConvertible where Value == FloatLiteralType {
+extension GeometricRatio: CustomStringConvertible where Value == Double {
     
     public var description: String {
         numericDescription.appendingSpaced(qualifiedName.bracketed)
@@ -41,7 +41,7 @@ fileprivate extension String {
     }
 }
 
-fileprivate extension FloatLiteralType {
+extension Double {
     
     var termFormatted: String {
         formatTerm(self)
