@@ -10,13 +10,13 @@ import Foundation
 public extension GeometricRatio where Value: FloatingPoint {
     
     static var metals: [Self] {[
-        platinum, gold, silver, bronce, copper, nickel, aluminium, iron, tin, lead
+        platinum, gold, silver, bronze, copper, nickel, aluminium, iron, tin, lead
     ]}
     
     static var platinum:  Self { .init((0 + sqrt( 4)) / 2, name: "Platinum" ) }
     static var gold:      Self { .init((1 + sqrt( 5)) / 2, name: "Golden"   ) }
     static var silver:    Self { .init((2 + sqrt( 8)) / 2, name: "Silver"   ) }
-    static var bronce:    Self { .init((3 + sqrt(13)) / 2, name: "Bronce"   ) }
+    static var bronze:    Self { .init((3 + sqrt(13)) / 2, name: "bronze"   ) }
     static var copper:    Self { .init((4 + sqrt(20)) / 2, name: "Copper"   ) }
     static var nickel:    Self { .init((5 + sqrt(29)) / 2, name: "Nickel"   ) }
     static var aluminium: Self { .init((6 + sqrt(40)) / 2, name: "Aluminium") }

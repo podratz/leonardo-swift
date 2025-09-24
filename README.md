@@ -41,7 +41,7 @@ The following definitions are useful in contexts that benefit from terse syntax,
 ```swift
 let g = Ratio.gold
 let s = Ratio.silver
-let b = Ratio.bronce
+let b = Ratio.bronze
 
 g[2].quotient // 2.618033988749895
 ```

@@ -12,7 +12,7 @@ struct Canvas: View {
             section(.platinum, .purple)
             section(.gold, .yellow)
             section(.silver, .gray)
-            section(.bronce, .orange)
+            section(.bronze, .orange)
         }
         HStack {
             section(.plastic, .green)
